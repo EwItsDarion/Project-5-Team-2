@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SampleScene.unity
+- path: Assets/ZRNAssets/005339_08932_25_14/Scenes/Sample_005339_08932_25_14.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

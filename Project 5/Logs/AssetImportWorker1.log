@@ -1,0 +1,297 @@
+Using pre-set license
+Built from '2023.1/staging' branch; Version is '2023.1.8f1 (ab88ac34d80c) revision 11241644'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'en' Physical Memory: 16051 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2023.1.8f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/djtwi/Desktop/Game Design Projects/Project-5/Project 5
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+58275
+Successfully changed project path to: C:/Users/djtwi/Desktop/Game Design Projects/Project-5/Project 5
+C:/Users/djtwi/Desktop/Game Design Projects/Project-5/Project 5
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [32704] Host "[IP] 10.252.16.73 [Port] 0 [Flags] 2 [Guid] 1481960695 [EditorId] 1481960695 [Version] 1048832 [Id] WindowsEditor(7,Orion) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [32704] Host "[IP] 10.252.16.73 [Port] 0 [Flags] 2 [Guid] 1481960695 [EditorId] 1481960695 [Version] 1048832 [Id] WindowsEditor(7,Orion) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Library Redirect Path: Library/Refreshing native plugins compatible for Editor in 12.29 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2023.1.8f1 (ab88ac34d80c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2023.1.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/djtwi/Desktop/Game Design Projects/Project-5/Project 5/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
+    Vendor:   NVIDIA
+    VRAM:     6009 MB
+    Driver:   31.0.15.2799
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2023.1.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2023.1.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2023.1.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56700
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2023.1.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2023.1.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007777 seconds.
+- Loaded All Assemblies, in  0.407 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+- Finished resetting the current domain, in  0.320 seconds
+Domain Reload Profiling: 724ms
+	BeginReloadAssembly (139ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (159ms)
+		LoadAssemblies (136ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (153ms)
+			TypeCache.Refresh (152ms)
+				TypeCache.ScanAssembly (141ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (320ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (270ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (8ms)
+			ProcessInitializeOnLoadAttributes (185ms)
+			ProcessInitializeOnLoadMethodAttributes (61ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image C:\Users\djtwi\Desktop\Game Design Projects\Project-5\Project 5\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\djtwi\Desktop\Game Design Projects\Project-5\Project 5\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.009 seconds
+Refreshing native plugins compatible for Editor in 3.29 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.799 seconds
+Domain Reload Profiling: 1804ms
+	BeginReloadAssembly (350ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (27ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (42ms)
+	LoadAllAssembliesAndSetupDomain (568ms)
+		LoadAssemblies (371ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (301ms)
+			TypeCache.Refresh (284ms)
+				TypeCache.ScanAssembly (273ms)
+			ScanForSourceGeneratedMonoScriptInfo (13ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (800ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (609ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (494ms)
+			ProcessInitializeOnLoadMethodAttributes (24ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3127 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 31 unused Assets / (53.3 KB). Loaded Objects now: 3667.
+Memory consumption went from 129.2 MB to 129.2 MB.
+Total: 5.473100 ms (FindLiveObjects: 0.185300 ms CreateObjectMapping: 0.099200 ms MarkObjects: 5.055300 ms  DeleteObjects: 0.131600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 82931.754640 seconds.
+  path: Assets/ZRNAssets/Cars/Car_Sedan_02.fbx
+  artifactKey: Guid(60b2a39a62fbc4c6aa251a492af217fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Cars/Car_Sedan_02.fbx using Guid(60b2a39a62fbc4c6aa251a492af217fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97b904d7ba9735180b0de93805adeddb') in 0.567559 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000856 seconds.
+  path: Assets/ZRNAssets/Cars/Car_TAXI_01.fbx
+  artifactKey: Guid(3c30a7463e7c945e5be8e3d79f339dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Cars/Car_TAXI_01.fbx using Guid(3c30a7463e7c945e5be8e3d79f339dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c74c166e3169bfc8566a9238c3ae1e73') in 0.048899 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/ZRNAssets/Cars/Car_Sedan_03.fbx
+  artifactKey: Guid(f8fb5be307ca84a53bf7b8b966a2b4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Cars/Car_Sedan_03.fbx using Guid(f8fb5be307ca84a53bf7b8b966a2b4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '978866202186a0618e168766a3746fab') in 0.059884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ZRNAssets/Cars/Car_Sedan_04.fbx
+  artifactKey: Guid(1fe8274d159fc4e618364536c2fde5a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Cars/Car_Sedan_04.fbx using Guid(1fe8274d159fc4e618364536c2fde5a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '828e0fb7c611f5f5cddc202d1f86a29e') in 0.044830 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 1.937772 seconds.
+  path: Assets/ZRNAssets/Skyboxes/Eerie Skybox.mat
+  artifactKey: Guid(16522f49031ff414abdf1f83f1b6a36c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Skyboxes/Eerie Skybox.mat using Guid(16522f49031ff414abdf1f83f1b6a36c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '136001b121e93a4d796ff90d67f976e5') in 0.290993 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/ZRNAssets/Skyboxes/StarryNight Skybox.mat
+  artifactKey: Guid(5aab239cac7fe8a4c931693a7535da5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Skyboxes/StarryNight Skybox.mat using Guid(5aab239cac7fe8a4c931693a7535da5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f5faf1ece971c7b12e653d5c38037e6') in 0.041571 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/ZRNAssets/Skyboxes/MoonShine Skybox.mat
+  artifactKey: Guid(5ba172cd3918d7c44aa6d04446119a00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Skyboxes/MoonShine Skybox.mat using Guid(5ba172cd3918d7c44aa6d04446119a00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '218e9b6486420ef8c8515c77d67237ac') in 0.028094 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/ZRNAssets/Skyboxes/Sunny3 Skybox.mat
+  artifactKey: Guid(53412155bc1016547b1a77b2333c0380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Skyboxes/Sunny3 Skybox.mat using Guid(53412155bc1016547b1a77b2333c0380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e23ec0de1f63d526e5815093733b1ad') in 0.030346 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/ZRNAssets/Skyboxes/Overcast1 Skybox.mat
+  artifactKey: Guid(931987be26c9646429c56f8a4692bb81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Skyboxes/Overcast1 Skybox.mat using Guid(931987be26c9646429c56f8a4692bb81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c4bc3b8d9d64c2e56db24b453853ab7') in 0.029976 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 3.518712 seconds.
+  path: Assets/ZRNAssets/Skyboxes/Textures/Sunny1/Sunny1_left.tif
+  artifactKey: Guid(66ebe4da1ef67e64e8aeccb820e409d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Skyboxes/Textures/Sunny1/Sunny1_left.tif using Guid(66ebe4da1ef67e64e8aeccb820e409d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e07f16e7aa998197e97e93307335ed06') in 0.035709 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/ZRNAssets/Skyboxes/Textures/Sunny1/Sunny1_down.tif
+  artifactKey: Guid(352e5f82d7105ad408904c5f552b5fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZRNAssets/Skyboxes/Textures/Sunny1/Sunny1_down.tif using Guid(352e5f82d7105ad408904c5f552b5fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bffe401e152c6d46cfbf9f4941ac552a') in 0.019490 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
