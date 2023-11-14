@@ -7,19 +7,34 @@ namespace Assets.Scripts
     {
 
         public int damage;
+
+        public float timeToCoughLow;
+        public float timeToCoughHigh;
+
+        private SphereCollider coughRadius;
+
+
+        protected override void Awake()
+        {
+            base.Awake();
+            damage = 50;
+            timeToCoughLow = 1f;
+            timeToCoughHigh = 6f;
+            coughRadius = gameObject.GetComponent<SphereCollider>();
+        }
         protected override void Die()
         {
             throw new System.NotImplementedException();
         }
 
-        protected void Cough(LivingThing hitObject) {
+        protected void CoughHit(LivingThing hitObject) {
             hitObject.TakeDamage(damage);
         }
 
         // Use this for initialization
         void Start()
         {
-
+            StartCoroutine(CoughWithCoroutine());
         }
 
         // Update is called once per frame
@@ -28,9 +43,23 @@ namespace Assets.Scripts
 
         }
 
+        IEnumerator CoughWithCoroutine() {
+            yield return new WaitForSeconds(1f);
+
+            while(health > 0) {
+                coughRadius.enabled = true;
+                yield return new WaitForSeconds(0.25f);
+                coughRadius.enabled = false;
+                yield return new WaitForSeconds(Random.Range(timeToCoughLow, timeToCoughHigh));
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            
+            if (other.CompareTag("Healthy")) {
+                Debug.Log("HIT");
+                CoughHit(other.gameObject.GetComponent<LivingThing>());
+            }
         }
     }
 }
