@@ -477,6 +477,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2617758616095488262, guid: 757499b1102d50e428ca203b88c06628, type: 3}
+      propertyPath: infectedPrefab
+      value: 
+      objectReference: {fileID: 5521691947903244462, guid: c06bc689979c799459e931f705667338, type: 3}
     - target: {fileID: 4208541624408436457, guid: 757499b1102d50e428ca203b88c06628, type: 3}
       propertyPath: m_Name
       value: Healthy NPC
@@ -491,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070574911013920239, guid: 757499b1102d50e428ca203b88c06628, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.81
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 9070574911013920239, guid: 757499b1102d50e428ca203b88c06628, type: 3}
       propertyPath: m_LocalRotation.w

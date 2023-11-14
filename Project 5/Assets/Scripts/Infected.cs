@@ -7,6 +7,7 @@ namespace Assets.Scripts
     {
 
         public int damage;
+        public GameObject healthyPrefab;
 
         public float timeToCoughLow;
         public float timeToCoughHigh;
@@ -24,7 +25,8 @@ namespace Assets.Scripts
         }
         protected override void Die()
         {
-            throw new System.NotImplementedException();
+            Instantiate(healthyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject);
         }
 
         protected void CoughHit(LivingThing hitObject) {
