@@ -42,9 +42,9 @@ namespace Assets.Scripts
         }
 
         // Update is called once per frame
-        void Update()
+        protected void Update()
         {
-
+            base.Update();
         }
 
         IEnumerator CoughWithCoroutine() {
