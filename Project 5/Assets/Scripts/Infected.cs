@@ -13,6 +13,7 @@ namespace Assets.Scripts
         public float timeToCoughHigh;
 
         private SphereCollider coughRadius;
+        private BoxCollider headHitBox;
 
 
         protected override void Awake()
@@ -22,6 +23,7 @@ namespace Assets.Scripts
             timeToCoughLow = 1f;
             timeToCoughHigh = 6f;
             coughRadius = gameObject.GetComponent<SphereCollider>();
+            headHitBox = gameObject.GetComponent<BoxCollider>();
         }
         protected override void Die()
         {
@@ -62,6 +64,8 @@ namespace Assets.Scripts
                 Debug.Log("HIT");
                 CoughHit(other.gameObject.GetComponent<LivingThing>());
             }
+
+
         }
     }
 }
