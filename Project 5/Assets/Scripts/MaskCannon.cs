@@ -13,18 +13,19 @@ public class MaskCannon : MonoBehaviour
     {
         canShoot = true;
         StartCoroutine(AllowPlayerToShoot());
-        shotAnimation = GetComponent<Animator>();
+       shotAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        shotAnimation.SetBool("Shoot", true);
+    { 
         if (Input.GetMouseButtonDown(0)&&canShoot==true)
         {
+            shotAnimation.SetTrigger("Shoot 0");
             Instantiate(mask, projectileSpawnPosition.transform.position, projectileSpawnPosition.transform.rotation);
             canShoot = false;
            
+
         }
       
     }
@@ -33,8 +34,8 @@ public class MaskCannon : MonoBehaviour
     {
         while (true)
         {
+
             yield return new WaitForSeconds(2f);
-            shotAnimation.SetBool("Shoot", false);
             canShoot = true;
         }
     }

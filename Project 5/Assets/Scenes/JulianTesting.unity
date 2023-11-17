@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,29 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask: {fileID: 9007766806654612816, guid: 5c2864c3a0685004aadb068e959eeb40, type: 3}
   projectileSpawnPosition: {fileID: 1772610512}
-  shotAnimation: {fileID: 645319642}
---- !u!95 &645319642
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149380927681}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe87997f8dfc599469ada8146e4272eb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  shotAnimation: {fileID: 0}
 --- !u!1001 &987444789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,7 +692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450653382249083}
   - component: {fileID: 645319641}
-  - component: {fileID: 645319642}
+  - component: {fileID: 919132149380927682}
   m_Layer: 0
   m_Name: maskcannon
   m_TagString: Untagged
@@ -722,6 +700,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &919132149380927682
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149380927681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe87997f8dfc599469ada8146e4272eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &3328508633219514841
 Transform:
   m_ObjectHideFlags: 0
@@ -790,7 +790,7 @@ Transform:
   m_GameObject: {fileID: 5233112405530358592}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000012823517, y: -0.99827725, z: 0.000000021818051, w: 0.058673527}
-  m_LocalPosition: {x: 0.51, y: 1.67, z: 0.4499998}
+  m_LocalPosition: {x: 0.52, y: 1.67, z: 0.5}
   m_LocalScale: {x: 19.567, y: 19.567, z: 19.567}
   m_ConstrainProportionsScale: 0
   m_Children: []
