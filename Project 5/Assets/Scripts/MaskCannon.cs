@@ -6,19 +6,36 @@ public class MaskCannon : MonoBehaviour
 {
     public Projectile mask;
     public GameObject projectileSpawnPosition;
+    private bool canShoot;
+    [SerializeField] private Animator shotAnimation;
     // Start is called before the first frame update
     void Start()
     {
-        
+        canShoot = true;
+        StartCoroutine(AllowPlayerToShoot());
+        shotAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        shotAnimation.SetBool("Shoot", true);
+        if (Input.GetMouseButtonDown(0)&&canShoot==true)
         {
             Instantiate(mask, projectileSpawnPosition.transform.position, projectileSpawnPosition.transform.rotation);
+            canShoot = false;
+           
+        }
+      
+    }
 
+    IEnumerator AllowPlayerToShoot()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            shotAnimation.SetBool("Shoot", false);
+            canShoot = true;
         }
     }
 }
