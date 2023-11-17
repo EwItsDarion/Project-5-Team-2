@@ -12,7 +12,6 @@ public abstract class NPC : LivingThing
     public Transform centrePoint; //centre of the area the agent wants to move around in
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
 
-
     protected override void Awake()
     {
         base.Awake();
@@ -21,6 +20,8 @@ public abstract class NPC : LivingThing
     }
 
     protected override abstract void Die();
+
+    public abstract void headHit(GameObject projectile, int damage);
 
     // Start is called before the first frame update
     void Start()

@@ -7,15 +7,18 @@ namespace Assets.Scripts
     {
 
         public GameObject infectedPrefab;
+        public bool masked;
 
         protected override void Awake()
         {
             base.Awake();
-
+            masked = false;
         }
         protected override void Die()
         {
-            Instantiate(infectedPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            Debug.Log("HealthyDead");
+            GameObject swap = Instantiate(infectedPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            swap.GetComponent<NPC>().centrePoint = centrePoint;
             Destroy(gameObject);
         }
 
@@ -29,6 +32,21 @@ namespace Assets.Scripts
         protected void Update()
         {
             base.Update();
+        }
+
+        public override void headHit(GameObject projectile, int damage)
+        {
+            if (!masked) {
+                masked = true;
+                health += damage;
+            }
+            
+        }
+
+        public void TakeDamage(int damage)
+        {
+            masked = false;
+            base.TakeDamage(damage);
         }
     }
 }

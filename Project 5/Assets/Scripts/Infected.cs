@@ -13,7 +13,6 @@ namespace Assets.Scripts
         public float timeToCoughHigh;
 
         private SphereCollider coughRadius;
-        private BoxCollider headHitBox;
 
 
         protected override void Awake()
@@ -23,11 +22,12 @@ namespace Assets.Scripts
             timeToCoughLow = 1f;
             timeToCoughHigh = 6f;
             coughRadius = gameObject.GetComponent<SphereCollider>();
-            headHitBox = gameObject.GetComponent<BoxCollider>();
         }
         protected override void Die()
         {
-            Instantiate(healthyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            Debug.Log("InfectedDead");
+            GameObject swap = Instantiate(healthyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            swap.GetComponent<NPC>().centrePoint = centrePoint; //Defines centerpoint of NPC movement radius programmatically on swap
             Destroy(gameObject);
         }
 
@@ -66,6 +66,12 @@ namespace Assets.Scripts
             }
 
 
+        }
+        
+        //These parameters should be updated when we have a projectile class for polymorphism
+        public override void headHit(GameObject projectile, int damage)
+        {
+            TakeDamage(damage);
         }
     }
 }
