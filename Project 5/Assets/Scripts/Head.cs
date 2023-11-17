@@ -25,7 +25,7 @@ namespace Assets.Scripts
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Mask")) {
-                parentObject.TakeDamage(50);
+                parentObject.headHit(other.gameObject, 50);
             }
         }
 
