@@ -21,7 +21,7 @@ public abstract class NPC : LivingThing
 
     protected override abstract void Die();
 
-    public abstract void headHit(GameObject projectile, int damage);
+    public abstract void headHit(Projectile projectile);
 
     // Start is called before the first frame update
     void Start()

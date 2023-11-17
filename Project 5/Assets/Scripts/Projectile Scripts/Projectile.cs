@@ -6,6 +6,7 @@ public abstract class Projectile : MonoBehaviour
 {
     protected float velocity;
     protected Rigidbody rb;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()

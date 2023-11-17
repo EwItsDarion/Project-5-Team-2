@@ -8,6 +8,7 @@ public class Mask : Projectile
     void Start()
     {
         velocity = 50.0f;
+        damage = 50;
         rb = gameObject.GetComponent<Rigidbody>();
         rb.velocity = transform.forward * velocity;
         StartCoroutine(DestroyObject());
