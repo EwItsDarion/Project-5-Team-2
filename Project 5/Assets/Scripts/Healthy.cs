@@ -34,14 +34,16 @@ namespace Assets.Scripts
             base.Update();
         }
 
-        public override void headHit(GameObject projectile, int damage)
+        public override void headHit(Projectile projectile)
         {
             if (!masked) {
                 masked = true;
-                health += damage;
+                health += projectile.damage; //maybe needs alteration or balance, this behavior is to increase defense against coughs, in other words,
+                                            // pre-shooting a mask onto a healthy individual gives them 2 coughs instead of one before being infected
             }
             
         }
+
 
         public void TakeDamage(int damage)
         {
