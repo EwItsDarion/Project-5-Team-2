@@ -1,3 +1,8 @@
+/*
+ * Julian Avila
+ * Project 2
+ * Allows the gun to shoot and animate objects
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,7 +39,7 @@ public class MaskCannon : MonoBehaviour
     {
         while (true)
         {
-
+            
             yield return new WaitForSeconds(2f);
             canShoot = true;
         }
