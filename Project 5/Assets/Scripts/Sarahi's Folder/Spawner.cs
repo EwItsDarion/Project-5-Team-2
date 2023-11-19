@@ -18,23 +18,27 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     private int waveNum = 0;
-    private int infectedSpawnAmount = 0;
+    private int infectedSpawnAmount = 4;
     private int infectedCured = 0;
+    private int healthySpawnAmount = 8;
 
     public GameObject[] spawners;
     public GameObject infected;
+    public GameObject healthy;
+    public Transform centerPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawners = new GameObject[5];
+        //spawners = new GameObject[5];
         
         for(int i = 0; i < spawners.Length; i++)
         {
             spawners[i] = transform.GetChild(i).gameObject;
         }
 
-        StartWave();
+        //StartWave();  //Changed for testing purposes
+        StartCoroutine(SpawnNPCswithCoroutine());
     }
 
     // Update is called once per frame
@@ -50,7 +54,14 @@ public class Spawner : MonoBehaviour
     private void SpawnInfected()
     {
         int spawnerID = Random.Range(0, spawners.Length);
-        Instantiate(infected, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
+        var spawned = Instantiate(infected, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
+        spawned.GetComponent<NPC>().centrePoint = centerPoint;
+    }
+    private void SpawnHealthy()
+    {
+        int spawnerID = Random.Range(0, spawners.Length);
+        var spawned = Instantiate(healthy, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
+        spawned.GetComponent<NPC>().centrePoint = centerPoint;
     }
 
     
@@ -58,6 +69,7 @@ public class Spawner : MonoBehaviour
     {
         waveNum = 1;
         infectedSpawnAmount = 4;
+        healthySpawnAmount = 8;
         infectedCured = 0;
 
         for(int i = 0; i < infectedSpawnAmount; i++)
@@ -78,6 +90,22 @@ public class Spawner : MonoBehaviour
             SpawnInfected();
         }
 
+    }
+
+
+    //This should probably be altered to accept different npc numbers at some point.
+    IEnumerator SpawnNPCswithCoroutine() {
+        for (int i = 0; i < healthySpawnAmount; i++)
+        {
+            SpawnHealthy();
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        for (int i = 0; i < infectedSpawnAmount; i++)
+        {
+            SpawnInfected();
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 
 }
