@@ -15,7 +15,7 @@ public abstract class NPC : LivingThing
     protected override void Awake()
     {
         base.Awake();
-        range = 5f;
+        range = 10f;
         nav = gameObject.GetComponent<NavMeshAgent>();
     }
 
