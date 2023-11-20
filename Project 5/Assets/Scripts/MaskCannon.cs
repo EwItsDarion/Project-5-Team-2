@@ -40,7 +40,8 @@ public class MaskCannon : MonoBehaviour
         while (true)
         {
             
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(.2f);
+            if(canShoot==false)
             canShoot = true;
         }
     }
