@@ -15,7 +15,7 @@ public class GameManager : Singleton<GameManager>
     
     public int score = 0;
 
-    public GameObject pauseMenu;
+    //public GameObject pauseMenu;
 
     //level tracking variable
     private string CurrentLevelname = string.Empty;
@@ -57,7 +57,7 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-    public void Pause()
+/*    public void Pause()
     {
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
@@ -66,13 +66,13 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
-    }
+    }*/
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) {
+        /*if (Input.GetKeyDown(KeyCode.P)) {
             Pause();
-        }
+        }*/
     }
 
 }
