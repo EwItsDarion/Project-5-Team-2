@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class LevelManager : MonoBehaviour
     public bool gameOver;
     public bool initialized;
     // Start is called before the first frame update
+
+     public Text scoreText;
+
     void Start()
     {
         wonDemo = false;
@@ -27,11 +31,16 @@ public class LevelManager : MonoBehaviour
         if (gameOver == true) {
             if (wonDemo == true) //Game Over and Won
             {
-                
+                scoreText.text = "You Survived!" + "\n" + "Press R to try Again!";
             }
             else { //Game Over and Lost
-                
+                scoreText.text = "You Got Infected!" + "\n" + "Press R to try Again!";
             }
+        }
+
+        if(gameOver && Input.GetKeyUp(KeyCode.R)) 
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
 
     }
@@ -42,4 +51,6 @@ public class LevelManager : MonoBehaviour
             gameOver = true;
         }
     }
+
+    
 }
