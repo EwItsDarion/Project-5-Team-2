@@ -13,6 +13,7 @@ public class MaskCannon : MonoBehaviour
     public GameObject projectileSpawnPosition;
     private bool canShoot;
     [SerializeField] private Animator shotAnimation;
+    RaycastHit hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +25,13 @@ public class MaskCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if (Input.GetMouseButtonDown(0)&&canShoot==true)
+        if (Input.GetMouseButtonUp(0)&&canShoot==true)
         {
             shotAnimation.SetTrigger("Shoot 0");
+
+          
             Instantiate(mask, projectileSpawnPosition.transform.position, projectileSpawnPosition.transform.rotation);
+
             canShoot = false;
            
 

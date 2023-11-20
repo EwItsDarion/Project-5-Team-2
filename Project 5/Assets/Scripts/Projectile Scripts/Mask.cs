@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mask : Projectile
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         velocity = 50.0f;
         damage = 50;
@@ -17,7 +17,7 @@ public class Mask : Projectile
     // Update is called once per frame
     void Update()
     {
-       
+      
     }
 
 
