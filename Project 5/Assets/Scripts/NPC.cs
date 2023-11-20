@@ -11,6 +11,7 @@ public abstract class NPC : LivingThing
 
     public Transform centrePoint; //centre of the area the agent wants to move around in
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
+    public LevelManager levelManager;
 
     protected override void Awake()
     {
@@ -58,6 +59,12 @@ public abstract class NPC : LivingThing
 
         result = Vector3.zero;
         return false;
+    }
+
+    protected void SetVariables(GameObject spawned)
+    {
+        spawned.GetComponent<NPC>().centrePoint = centrePoint;
+        spawned.GetComponent<NPC>().levelManager = levelManager;
     }
 
 }

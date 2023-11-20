@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
     public GameObject infected;
     public GameObject healthy;
     public Transform centerPoint;
+    public LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
@@ -44,24 +45,31 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
+        /*if(Input.GetKeyDown(KeyCode.T))
         {
             //calling method
             SpawnInfected();
-        }
+        }*/
     }
 
     private void SpawnInfected()
     {
         int spawnerID = Random.Range(0, spawners.Length);
         var spawned = Instantiate(infected, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
-        spawned.GetComponent<NPC>().centrePoint = centerPoint;
+        SetVariables(spawned);
+        levelManager.numInfected++;
     }
     private void SpawnHealthy()
     {
         int spawnerID = Random.Range(0, spawners.Length);
         var spawned = Instantiate(healthy, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
+        SetVariables(spawned);
+        levelManager.numHealthy++;
+    }
+
+    private void SetVariables(GameObject spawned) { 
         spawned.GetComponent<NPC>().centrePoint = centerPoint;
+        spawned.GetComponent<NPC>().levelManager = levelManager;
     }
 
     
@@ -106,6 +114,7 @@ public class Spawner : MonoBehaviour
             SpawnInfected();
             yield return new WaitForSeconds(0.2f);
         }
+        levelManager.initialized = true;
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -6,15 +7,17 @@ namespace Assets.Scripts
     public class Player : LivingThing
     {
 
+        public LevelManager levelManager;
+
         protected override void Awake()
         {
             base.Awake();
-            health = 100;
+            health = 400;
         }
 
         protected override void Die()
         {
-            throw new System.NotImplementedException();
+            levelManager.gameOver = true;
         }
 
         // Use this for initialization

@@ -18,7 +18,10 @@ namespace Assets.Scripts
         {
             Debug.Log("HealthyDead");
             GameObject swap = Instantiate(infectedPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            swap.GetComponent<NPC>().centrePoint = centrePoint;
+            //swap.GetComponent<NPC>().centrePoint = centrePoint;
+            SetVariables(swap);
+            levelManager.numHealthy--;
+            levelManager.numInfected++;
             Destroy(gameObject);
         }
 
