@@ -18,11 +18,21 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
 
      public Text scoreText;
+    private Slider slider;
+    public float FillSpeed = .05f;
 
+    private float targetProgress = 0;
+    private void Awake()
+    {
+        slider = gameObject.GetComponent<Slider>();
+    }
     void Start()
     {
+        IncrementProgress(0.75f);
+
         wonDemo = false;
         initialized = false;
+
     }
 
     // Update is called once per frame
@@ -43,6 +53,10 @@ public class LevelManager : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
 
+        if(slider.value < targetProgress)
+        {
+            slider.value += FillSpeed * Time.deltaTime;
+        }
     }
 
     public void CheckWin() {
@@ -52,5 +66,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    
+    public void IncrementProgress(float newProgress)
+    {
+       targetProgress = slider.value + newProgress;
+    }
 }
