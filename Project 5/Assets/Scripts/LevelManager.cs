@@ -18,17 +18,17 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
 
      public Text scoreText;
-    private Slider slider;
+    public Slider slider;
     public float FillSpeed = .05f;
 
     private float targetProgress = 0;
     private void Awake()
     {
-        slider = gameObject.GetComponent<Slider>();
+        //slider = gameObject.GetComponent<Slider>();
     }
     void Start()
     {
-        IncrementProgress(0.75f);
+        //IncrementProgress(0.75f);
 
         wonDemo = false;
         initialized = false;
@@ -38,6 +38,14 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (initialized) { //can probably be changed, this is some sub-par logic to work with some slightly janky systems.
+            totalNPC = numHealthy + numInfected;
+            slider.maxValue = totalNPC;
+            slider.value = 0;
+            initialized = false; //so it only happens once
+        }
+
         if (gameOver == true) {
             if (wonDemo == true) //Game Over and Won
             {
@@ -53,10 +61,12 @@ public class LevelManager : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
 
-        if(slider.value < targetProgress)
-        {
-            slider.value += FillSpeed * Time.deltaTime;
-        }
+        /*        if(slider.value < targetProgress)
+                {
+                    slider.value += FillSpeed * Time.deltaTime;
+                }*/
+        slider.value = numHealthy;
+
     }
 
     public void CheckWin() {
@@ -66,8 +76,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void IncrementProgress(float newProgress)
+/*    public void IncrementProgress(float newProgress)
     {
        targetProgress = slider.value + newProgress;
-    }
+    }*/
 }

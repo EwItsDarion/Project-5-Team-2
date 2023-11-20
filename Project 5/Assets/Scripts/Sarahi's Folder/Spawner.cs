@@ -103,13 +103,13 @@ public class Spawner : MonoBehaviour
 
     //This should probably be altered to accept different npc numbers at some point.
     IEnumerator SpawnNPCswithCoroutine() {
-        for (int i = 0; i < healthySpawnAmount; i++)
+        for (int i = 0; i < healthySpawnAmount; ++i)
         {
             SpawnHealthy();
             yield return new WaitForSeconds(0.2f);
         }
 
-        for (int i = 0; i < infectedSpawnAmount; i++)
+        for (int i = 0; i < infectedSpawnAmount; ++i)
         {
             SpawnInfected();
             yield return new WaitForSeconds(0.2f);
