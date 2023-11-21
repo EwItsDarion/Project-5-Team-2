@@ -10,7 +10,7 @@ using UnityEngine;
 public class MaskCannon : MonoBehaviour
 {
     public Projectile mask;
-    public GameObject projectileSpawnPosition;
+    public GameObject projectileSpawnPosition1,projectileSpawnPosition2,projectileSpawnPosition3;
     private bool canShoot;
     [SerializeField] private Animator shotAnimation;
     RaycastHit hit;
@@ -30,7 +30,9 @@ public class MaskCannon : MonoBehaviour
             shotAnimation.SetTrigger("Shoot 0");
 
           
-            Instantiate(mask, projectileSpawnPosition.transform.position, projectileSpawnPosition.transform.rotation);
+            Instantiate(mask, projectileSpawnPosition1.transform.position, projectileSpawnPosition1.transform.rotation);
+            Instantiate(mask, projectileSpawnPosition2.transform.position, projectileSpawnPosition2.transform.rotation);
+            Instantiate(mask, projectileSpawnPosition3.transform.position, projectileSpawnPosition3.transform.rotation);
 
             canShoot = false;
            
