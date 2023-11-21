@@ -8,6 +8,8 @@ TagManager:
   - Infected
   - CinemachineTarget
   - Mask
+  - AICars
+  - mine
   layers:
   - Default
   - TransparentFX
