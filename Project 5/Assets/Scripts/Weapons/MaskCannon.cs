@@ -7,11 +7,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaskCannon : MonoBehaviour
+public class MaskCannon : Weapon
 {
-    public Projectile mask;
+    public Projectile mask,tempMask;
     public GameObject projectileSpawnPosition1,projectileSpawnPosition2,projectileSpawnPosition3;
-    private bool canShoot;
     [SerializeField] private Animator shotAnimation;
     RaycastHit hit;
     // Start is called before the first frame update
@@ -29,10 +28,13 @@ public class MaskCannon : MonoBehaviour
         {
             shotAnimation.SetTrigger("Shoot 0");
 
-          
-            Instantiate(mask, projectileSpawnPosition1.transform.position, projectileSpawnPosition1.transform.rotation);
-            Instantiate(mask, projectileSpawnPosition2.transform.position, projectileSpawnPosition2.transform.rotation);
-            Instantiate(mask, projectileSpawnPosition3.transform.position, projectileSpawnPosition3.transform.rotation);
+      
+            tempMask = Instantiate(mask, projectileSpawnPosition1.transform.position, projectileSpawnPosition1.transform.rotation);
+            tempMask.GetComponent<Mask>().SetVelocity(50f);
+            tempMask = Instantiate(mask, projectileSpawnPosition2.transform.position, projectileSpawnPosition2.transform.rotation);
+            tempMask.GetComponent<Mask>().SetVelocity(50f);
+            tempMask = Instantiate(mask, projectileSpawnPosition3.transform.position, projectileSpawnPosition3.transform.rotation);
+            tempMask.GetComponent<Mask>().SetVelocity(50f);
 
             canShoot = false;
            

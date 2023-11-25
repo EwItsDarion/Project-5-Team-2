@@ -21,8 +21,8 @@ public abstract class Projectile : MonoBehaviour
         
     }
 
-    //protected abstract IEnumerator DestroyObject();
-       
 
-   
+    public abstract void SetVelocity(float velocityOfProjectile);
+
+
 }

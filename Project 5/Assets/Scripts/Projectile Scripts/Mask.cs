@@ -10,7 +10,7 @@ public class Mask : Projectile
         velocity = 50.0f;
         damage = 50;
         rb = gameObject.GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * velocity;
+     
         StartCoroutine(DestroyObject());
     }
 
@@ -25,5 +25,10 @@ public class Mask : Projectile
     {
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
+    }
+
+    public override void SetVelocity(float velocityOfProjectile)
+    {
+        rb.velocity = transform.forward * velocityOfProjectile;
     }
 }
