@@ -9,7 +9,8 @@ TagManager:
   - CinemachineTarget
   - Mask
   - AICars
-  - mine
+  - mine(projectile)
+  - Mine Blast collider
   layers:
   - Default
   - TransparentFX

@@ -45,7 +45,6 @@ public class Slingshot : Weapon
     {
         while (true)
         {
-
             yield return new WaitForSeconds(.2f);
             if (canShoot == false)
                 canShoot = true;

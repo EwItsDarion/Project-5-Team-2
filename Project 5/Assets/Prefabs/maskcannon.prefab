@@ -432,7 +432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2440066344173518786
 Transform:
   m_ObjectHideFlags: 0
@@ -466,6 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 9007766806654612816, guid: 5c2864c3a0685004aadb068e959eeb40, type: 3}
+  tempMask: {fileID: 0}
   projectileSpawnPosition1: {fileID: 821262859001795741}
   projectileSpawnPosition2: {fileID: 6280806917633710998}
   projectileSpawnPosition3: {fileID: 1650086357497579170}

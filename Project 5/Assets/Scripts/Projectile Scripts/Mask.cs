@@ -27,8 +27,5 @@ public class Mask : Projectile
         Destroy(gameObject);
     }
 
-    public override void SetVelocity(float velocityOfProjectile)
-    {
-        rb.velocity = transform.forward * velocityOfProjectile;
-    }
+    
 }
