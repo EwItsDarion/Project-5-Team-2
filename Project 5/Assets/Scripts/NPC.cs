@@ -9,6 +9,8 @@ public abstract class NPC : LivingThing
 
     public float range; //radius of sphere
 
+    public float speed;
+
     public Transform centrePoint; //centre of the area the agent wants to move around in
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
     public LevelManager levelManager;
@@ -16,8 +18,10 @@ public abstract class NPC : LivingThing
     protected override void Awake()
     {
         base.Awake();
+        speed = 3.5f;
         range = 10f;
         nav = gameObject.GetComponent<NavMeshAgent>();
+        nav.speed = speed;
     }
 
     protected override abstract void Die();
