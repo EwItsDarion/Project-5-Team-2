@@ -28,6 +28,9 @@ public class Spawner : MonoBehaviour
     public Transform centerPoint;
     public LevelManager levelManager;
 
+    // keep track of enemy count and 
+    public int infectedCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,11 +48,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(Input.GetKeyDown(KeyCode.T))
-        {
-            //calling method
-            SpawnInfected();
-        }*/
+      
     }
 
     private void SpawnInfected()
