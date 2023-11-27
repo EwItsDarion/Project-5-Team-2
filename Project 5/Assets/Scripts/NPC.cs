@@ -19,7 +19,7 @@ public abstract class NPC : LivingThing
     {
         base.Awake();
         speed = 3.5f;
-        range = 10f;
+        range = 75f;
         nav = gameObject.GetComponent<NavMeshAgent>();
         nav.speed = speed;
     }

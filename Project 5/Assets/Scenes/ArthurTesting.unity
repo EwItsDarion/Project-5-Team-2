@@ -132,10 +132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 3923769602768756597, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
-      propertyPath: currWeapon
-      value: 
-      objectReference: {fileID: 1428837111}
     - target: {fileID: 8090759625835521496, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.6202965
@@ -756,17 +752,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1428837111 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1884487483598341990, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
-  m_PrefabInstance: {fileID: 442834943}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06d6020933d662a4890adb380eff04ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1567673098
