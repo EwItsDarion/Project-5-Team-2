@@ -11,6 +11,7 @@ TagManager:
   - AICars
   - mine(projectile)
   - Mine Blast collider
+  - Projectile
   layers:
   - Default
   - TransparentFX
