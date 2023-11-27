@@ -9,6 +9,7 @@ public class Slingshot : Weapon
     [SerializeField] private GameObject stringforSling;
     private Vector3 stringSize;
     private float velocity;
+    public GameObject maskVisual;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class Slingshot : Weapon
             stringforSling.transform.localScale = stringSize;
             tempMask = Instantiate(mask, projectileSpawnPosition1.transform.position, projectileSpawnPosition1.transform.rotation);
             tempMask.GetComponent<Mask>().SetVelocity(velocity);
+            maskVisual.gameObject.SetActive(false);
             velocity = 0;
         }
     }
@@ -46,6 +48,7 @@ public class Slingshot : Weapon
             yield return new WaitForSeconds(.2f);
             if (canShoot == false)
                 canShoot = true;
+            maskVisual.gameObject.SetActive(true);
         }
     }
 
