@@ -13,18 +13,21 @@ public class MaskCannon : Weapon
     public GameObject projectileSpawnPosition1,projectileSpawnPosition2,projectileSpawnPosition3;
     [SerializeField] private Animator shotAnimation;
     RaycastHit hit;
+
     // Start is called before the first frame update
     void Start()
     {
         canShoot = true;
         StartCoroutine(AllowPlayerToShoot());
+        
        shotAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
-    { 
-        if (Input.GetMouseButtonUp(0)&&canShoot==true)
+    {
+        
+        if (Input.GetMouseButton(0)&&canShoot==true)
         {
             shotAnimation.SetTrigger("Shoot 0");
 
@@ -45,12 +48,21 @@ public class MaskCannon : Weapon
 
     IEnumerator AllowPlayerToShoot()
     {
+        //change while to till game over maybe?
         while (true)
         {
-            
-            yield return new WaitForSeconds(.2f);
-            if(canShoot==false)
+            yield return new WaitForSeconds(.8f);
+
+            if (canShoot==false)
             canShoot = true;
+
+          
         }
+    }
+
+    //Once enabled again, allow the player to shoot
+    void OnEnable()
+    {
+        StartCoroutine(AllowPlayerToShoot());
     }
 }

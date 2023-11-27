@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    protected  bool canShoot;
+    public  bool canShoot;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
     {
         
     }
-  
+
+   
 
 }

@@ -31,6 +31,7 @@ public class MineWeapon : Weapon
 
     IEnumerator AllowPlayerToShoot()
     {
+        //change while to till game over maybe?
         while (true)
         {
 
@@ -42,6 +43,10 @@ public class MineWeapon : Weapon
             }
            
         }
+    }
+    void OnEnable()
+    {
+        StartCoroutine(AllowPlayerToShoot());
     }
 }
 

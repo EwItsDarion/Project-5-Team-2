@@ -9,7 +9,6 @@ public class Slingshot : Weapon
     [SerializeField] private GameObject stringforSling;
     private Vector3 stringSize;
     private float velocity;
-    RaycastHit hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +26,6 @@ public class Slingshot : Weapon
             stringforSling.transform.localScale += new Vector3(0,0, 1);
 
             velocity += 10;
-           
-
             canShoot = false;
 
 
@@ -43,12 +40,18 @@ public class Slingshot : Weapon
     }
     IEnumerator AllowPlayerToShoot()
     {
+        //change while to till game over maybe?
         while (true)
         {
             yield return new WaitForSeconds(.2f);
             if (canShoot == false)
                 canShoot = true;
         }
+    }
+
+    void OnEnable()
+    {
+        StartCoroutine(AllowPlayerToShoot());
     }
 }
 
