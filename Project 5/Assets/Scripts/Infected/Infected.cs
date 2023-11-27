@@ -72,7 +72,7 @@ namespace Assets.Scripts
 
         }
         
-        //These parameters should be updated when we have a projectile class for polymorphism
+
         public override void headHit(Projectile projectile)
         {
             TakeDamage(projectile.damage);
