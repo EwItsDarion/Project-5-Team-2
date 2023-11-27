@@ -64,7 +64,7 @@ namespace Assets.Scripts
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Healthy")) {
+            if (other.CompareTag("Healthy") || other.CompareTag("Player")) {
                 Debug.Log("HIT");
                 CoughHit(other.gameObject.GetComponent<LivingThing>());
             }

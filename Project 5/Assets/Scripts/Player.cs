@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
     public class Player : LivingThing
     {
-
+        public Slider healthBar;
         public LevelManager levelManager;
 
         protected override void Awake()
         {
             base.Awake();
-            health = 400;
+            health = 150;
         }
 
         protected override void Die()
@@ -29,7 +30,7 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-
+            healthBar.value = health;
         }
     }
 }
