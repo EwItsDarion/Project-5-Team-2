@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public int numHealthy; // fairly unused right now, but can be used if we want to switch to a percentage win condition rather than completion
     public int numInfected;
     public int totalNPC;
+    public int wave;
 
     private int numTotal;
     public bool wonDemo;

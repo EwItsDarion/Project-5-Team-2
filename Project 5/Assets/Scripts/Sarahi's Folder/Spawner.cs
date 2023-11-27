@@ -17,10 +17,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private int waveNum = 0;
-    private int infectedSpawnAmount = 4;
-    private int infectedCured = 0;
-    private int healthySpawnAmount = 8;
+    //private int waveNum = 0;
+    public int infectedSpawnAmount = 4;
+    //private int infectedCured = 0;
+    public int healthySpawnAmount = 8;
 
     public GameObject[] spawners;
     public GameObject infected;
@@ -75,23 +75,26 @@ public class Spawner : MonoBehaviour
     
     private void StartWave()
     {
-        waveNum = 1;
-        infectedSpawnAmount = 4;
-        healthySpawnAmount = 8;
-        infectedCured = 0;
+        /* //waveNum = 1;
+         infectedSpawnAmount = 4;
+         healthySpawnAmount = 8;
+         //infectedCured = 0;
 
-        for(int i = 0; i < infectedSpawnAmount; i++)
-        {
-            SpawnInfected();
-        }
+         for(int i = 0; i < infectedSpawnAmount; i++)
+         {
+             SpawnInfected();
+         }*/
+
+        StartCoroutine(SpawnNPCswithCoroutine());
+
 
     }
 
     private void NextWave()
     {
-        waveNum++;
+        //waveNum++;
         infectedSpawnAmount += 4;
-        infectedCured = 0;
+        //infectedCured = 0;
 
         for (int i = 0; i < infectedSpawnAmount; i++)
         {
@@ -101,7 +104,7 @@ public class Spawner : MonoBehaviour
     }
 
 
-    //This should probably be altered to accept different npc numbers at some point.
+    //This could be reused, update the spawn amount integers and call the method to start a new wave
     IEnumerator SpawnNPCswithCoroutine() {
         for (int i = 0; i < healthySpawnAmount; ++i)
         {
