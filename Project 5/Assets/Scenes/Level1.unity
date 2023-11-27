@@ -4301,7 +4301,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1778873715}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 400
+  m_MaxValue: 150
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -14607,6 +14607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e25c1a203fa26541859634ba669539c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectedSpawnAmount: 10
+  healthySpawnAmount: 20
   spawners:
   - {fileID: 1962958686}
   - {fileID: 1193910851}
