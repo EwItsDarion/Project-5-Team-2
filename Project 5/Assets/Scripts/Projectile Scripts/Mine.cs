@@ -11,12 +11,13 @@ public class Mine : Projectile
     // Start is called before the first frame update
     void Start()
     {
+        damage = 100;
         velocity = 10.0f;
         rb = gameObject.GetComponent<Rigidbody>();
         SetVelocity(velocity);
         StartCoroutine(DestroyObject());
         exploded = false;
-        explosionCollider = explosionParicle.GetComponentInChildren<SphereCollider>();
+        explosionCollider = gameObject.GetComponent<SphereCollider>();
         explosionCollider.enabled = false;
     }
 
@@ -49,7 +50,7 @@ public class Mine : Projectile
             explosionCollider.enabled = true;
             explosionParicle.GetComponent<ParticleSystem>().Play();
             meshRender1.enabled = meshRender2.enabled = false;
-            GetComponent<Collider>().enabled = false;
+            //GetComponent<Collider>().enabled = false;
             exploded = true;
         }
     }

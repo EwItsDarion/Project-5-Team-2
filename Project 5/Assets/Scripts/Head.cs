@@ -24,7 +24,7 @@ namespace Assets.Scripts
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Mask")) {
+            if (other.CompareTag("Projectile")) {
                 parentObject.headHit(other.gameObject.GetComponent<Projectile>()); //grabs the projectile script for whatever projectile may have hit the head.
             }
         }
