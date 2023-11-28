@@ -14,6 +14,7 @@ Summary:
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class Spawner : MonoBehaviour
 
     // keep track of enemy count and 
     public int infectedCount;
+
+    public Text waveNum;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,12 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        infectedCount = GameObject.FindGameObjectsWithTag("Infected").Length;
+
+        if(infectedCount == 0)
+        {
+            StartWave();
+        }
       
     }
 
