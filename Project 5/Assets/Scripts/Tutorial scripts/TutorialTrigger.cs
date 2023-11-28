@@ -6,6 +6,7 @@ public class TutorialTrigger : MonoBehaviour
 {
     public Weapon maskCannon;
     public GameObject entry3;
+    public GameObject spawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class TutorialTrigger : MonoBehaviour
             {
                 entry3.gameObject.SetActive(false);
                 maskCannon.gameObject.SetActive(true);
+                spawner.SetActive(true);
             }
             if (gameObject.name == "TutorialTrigger4")
             {
