@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ButtonAction : MonoBehaviour
 {
-    public Canvas canvasToDisable;
+  /*  public Canvas canvasToDisable;
 
     public void DisableCanvas()
     {
@@ -18,5 +18,21 @@ public class ButtonAction : MonoBehaviour
         DisableCanvas();
         SceneManager.LoadScene(1);
 
+    }*/
+
+    public void Tutorial()
+    {
+        // Will load the next scene 
+        //Main Menue = 0 and tutorial = 1 
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void Play()
+    {
+        //load scene 2 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
+    }
+
 }
