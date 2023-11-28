@@ -1823,6 +1823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e25c1a203fa26541859634ba669539c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectedSpawnAmount: 4
+  healthySpawnAmount: 8
   spawners:
   - {fileID: 512239100}
   - {fileID: 804039715}
@@ -1832,6 +1834,8 @@ MonoBehaviour:
   healthy: {fileID: 1457866469621900, guid: 255eca44f584d234b85ab928bf1a924a, type: 3}
   centerPoint: {fileID: 483225128}
   levelManager: {fileID: 1896479403}
+  infectedCount: 0
+  waveNum: {fileID: 0}
 --- !u!4 &1708823021
 Transform:
   m_ObjectHideFlags: 0
@@ -2099,6 +2103,7 @@ MonoBehaviour:
   numHealthy: 0
   numInfected: 0
   totalNPC: 0
+  wave: 0
   wonDemo: 0
   gameOver: 0
   initialized: 0
@@ -2123,6 +2128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  healthBar: {fileID: 0}
   levelManager: {fileID: 1896479403}
 --- !u!1 &1975502819
 GameObject:
@@ -3558,6 +3564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   range: 0
+  speed: 0
   centrePoint: {fileID: 0}
   levelManager: {fileID: 0}
   infectedPrefab: {fileID: 805304155707130652, guid: 6e04285578f8c5e41aeaf49a0a36bf6b, type: 3}
