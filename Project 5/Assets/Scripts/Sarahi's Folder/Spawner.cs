@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
     // keep track of enemy count and 
     public int infectedCount;
 
-    public Text waveNum;
+    //public Text waveNum;
    
 
     // Start is called before the first frame update
@@ -52,12 +52,12 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        infectedCount = GameObject.FindGameObjectsWithTag("Infected").Length;
+/*        infectedCount = GameObject.FindGameObjectsWithTag("Infected").Length;
 
         if(infectedCount == 0)
         {
-            StartWave();
-        }
+            StartWave();    // genuinely don't know why this would cause such an explosion in spawning but this is what I commented out and now it seems fine
+        }*/
       
     }
 
