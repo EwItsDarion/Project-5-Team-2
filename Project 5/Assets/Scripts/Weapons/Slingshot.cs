@@ -10,25 +10,36 @@ public class Slingshot : Weapon
     private Vector3 stringSize;
     private float velocity;
     public GameObject maskVisual;
+
+    private void Awake()
+    {
+        unlocked = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         canShoot = true;
         StartCoroutine(AllowPlayerToShoot());
         stringSize = stringforSling.transform.localScale;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+
+      if(canShoot)
+            maskVisual.gameObject.SetActive(true);
+
         if (Input.GetMouseButton(0) && canShoot == true)
         {
-            if(stringforSling.transform.localScale.z<stringSize.z+10)
-            stringforSling.transform.localScale += new Vector3(0,0, 1);
+            if(stringforSling.transform.localScale.z<stringSize.z+20)
+            stringforSling.transform.localScale += new Vector3(0,0,5);
 
-            velocity += 10;
+            velocity += 20;
             canShoot = false;
-
+           
 
         }
         if (Input.GetMouseButtonUp(0) && canShoot == false)
@@ -39,22 +50,7 @@ public class Slingshot : Weapon
             maskVisual.gameObject.SetActive(false);
             velocity = 0;
         }
-    }
-    IEnumerator AllowPlayerToShoot()
-    {
-        //change while to till game over maybe?
-        while (true)
-        {
-            yield return new WaitForSeconds(.2f);
-            if (canShoot == false)
-                canShoot = true;
-            maskVisual.gameObject.SetActive(true);
-        }
-    }
 
-    void OnEnable()
-    {
-        StartCoroutine(AllowPlayerToShoot());
     }
 }
 

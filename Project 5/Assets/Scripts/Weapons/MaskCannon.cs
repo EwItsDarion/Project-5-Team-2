@@ -14,12 +14,16 @@ public class MaskCannon : Weapon
     [SerializeField] private Animator shotAnimation;
     RaycastHit hit;
 
+    private void Awake()
+    {
+        unlocked = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         canShoot = true;
         StartCoroutine(AllowPlayerToShoot());
-        
        shotAnimation = GetComponent<Animator>();
     }
 
@@ -46,23 +50,5 @@ public class MaskCannon : Weapon
       
     }
 
-    IEnumerator AllowPlayerToShoot()
-    {
-        //change while to till game over maybe?
-        while (true)
-        {
-            yield return new WaitForSeconds(.8f);
-
-            if (canShoot==false)
-            canShoot = true;
-
-          
-        }
-    }
-
-    //Once enabled again, allow the player to shoot
-    void OnEnable()
-    {
-        StartCoroutine(AllowPlayerToShoot());
-    }
+  
 }
