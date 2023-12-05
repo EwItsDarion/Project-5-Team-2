@@ -40,7 +40,7 @@ public abstract class NPC : LivingThing
         if (nav.remainingDistance <= nav.stoppingDistance) //done with path
         {
             Vector3 point;
-            if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area
+            if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of are
             {
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
                 nav.SetDestination(point);
