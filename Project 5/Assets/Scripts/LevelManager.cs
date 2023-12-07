@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,20 +8,24 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
 
-    public int numHealthy; // fairly unused right now, but can be used if we want to switch to a percentage win condition rather than completion
-    public int numInfected;
-    public int totalNPC;
+/*  public int numHealthy; // fairly unused right now, but can be used if we want to switch to a percentage win condition rather than completion
+    public int numInfected;*/
+    public int totalNPC;  //Commented out because I want to 
     public int wave;
+    public bool isWaveActive;
 
-    private int numTotal;
-    public bool wonDemo;
+    private int numTotal;               //Move 15-23 to a game Manager ?
+    //public bool wonDemo;
     public bool gameOver;
-    public bool initialized;
+
+    public List<List<int>> waveTemplates;
+
+    public Spawner spawner;
     // Start is called before the first frame update
 
-     public Text scoreText;
+    public Text scoreText;         
     public Slider slider;
-    public float FillSpeed = .05f;
+    public float FillSpeed = .05f;      //
 
     private float targetProgress = 0;
     private void Awake()
@@ -31,8 +36,8 @@ public class LevelManager : MonoBehaviour
     {
         //IncrementProgress(0.75f);
 
-        wonDemo = false;
-        initialized = false;
+        isWaveActive = false;
+        spawner.StartWave(waveTemplates[0]);
 
     }
 
@@ -40,14 +45,16 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
 
-        if (initialized) { //can probably be changed, this is some sub-par logic to work with some slightly janky systems.
-            totalNPC = numHealthy + numInfected;
+        if (spawner.finishedSpawning) { //can probably be changed, this is some sub-par logic to work with some slightly janky systems.
+            totalNPC = spawner.numHealthy + spawner.numInfected;
             slider.maxValue = totalNPC;
             slider.value = 0;
-            initialized = false; //so it only happens once
+            spawner.finishedSpawning = false; //so it only happens once
         }
 
-        if (gameOver == true) {
+        
+
+/*        if (gameOver == true) {
             if (wonDemo == true) //Game Over and Won
             {
                 scoreText.text = "You Survived!" + "\n" + "Press R to try Again!";
@@ -55,7 +62,7 @@ public class LevelManager : MonoBehaviour
             else { //Game Over and Lost
                 scoreText.text = "You Got Infected!" + "\n" + "Press R to try Again!";
             }
-        }
+        }*/
 
         if(gameOver && Input.GetKeyUp(KeyCode.R)) 
         {
@@ -66,13 +73,13 @@ public class LevelManager : MonoBehaviour
                 {
                     slider.value += FillSpeed * Time.deltaTime;
                 }*/
-        slider.value = numHealthy;
+        slider.value = spawner.numHealthy;
 
     }
 
     public void CheckWin() {
-        if (numInfected == 0) {
-            wonDemo = true;
+        if (spawner.numInfected == 0) {
+            isWaveActive = false ;
             gameOver = true;
         }
     }

@@ -29,9 +29,9 @@ namespace Assets.Scripts
             GameObject swap = Instantiate(healthyPrefab, gameObject.transform.position, gameObject.transform.rotation);
             //swap.GetComponent<NPC>().centrePoint = centrePoint; //Defines centerpoint of NPC movement radius programmatically on swap
             SetVariables(swap);
-            levelManager.numInfected--;
-            levelManager.numHealthy++;
-            levelManager.CheckWin();
+            spawner.numInfected--;
+            /*levelManager.numHealthy++;*/
+            //levelManager.CheckWin();
             Destroy(gameObject);
         }
 
@@ -42,7 +42,9 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
+            spawner.numInfected++;
             StartCoroutine(CoughWithCoroutine());
+
         }
 
         // Update is called once per frame

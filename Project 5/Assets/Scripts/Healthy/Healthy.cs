@@ -20,15 +20,15 @@ namespace Assets.Scripts
             GameObject swap = Instantiate(infectedPrefab, gameObject.transform.position, gameObject.transform.rotation);
             //swap.GetComponent<NPC>().centrePoint = centrePoint;
             SetVariables(swap);
-            levelManager.numHealthy--;
-            levelManager.numInfected++;
+            spawner.numHealthy--;
+            /*levelManager.numInfected++;*/
             Destroy(gameObject);
         }
 
         // Use this for initialization
         void Start()
         {
-
+            spawner.numHealthy++;
         }
 
         // Update is called once per frame

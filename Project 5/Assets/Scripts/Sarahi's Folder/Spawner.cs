@@ -3,13 +3,7 @@
 Team Project 5
 
 Summary:
- 
- 
- 
- 
- 
  */
-
 
 using System.Collections;
 using System.Collections.Generic;
@@ -19,18 +13,24 @@ using UnityEngine.UI;
 public class Spawner : MonoBehaviour
 {
     //private int waveNum = 0;
-    public int infectedSpawnAmount = 4;
+    public int numInfected = 0;
     //private int infectedCured = 0;
-    public int healthySpawnAmount = 8;
+    public int numHealthy = 0;
+
+    public List<int> waveTemplate;
 
     public GameObject[] spawners;
+
+    //Prefabs
     public GameObject infected;
     public GameObject healthy;
-    public Transform centerPoint;
-    public LevelManager levelManager;
+
+    public Transform centrePoint;
 
     // keep track of enemy count and 
     public int infectedCount;
+
+    public bool finishedSpawning;
 
     //public Text waveNum;
    
@@ -38,6 +38,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        finishedSpawning = false;
         //spawners = new GameObject[5];
         
         for(int i = 0; i < spawners.Length; i++)
@@ -45,8 +46,10 @@ public class Spawner : MonoBehaviour
             spawners[i] = transform.GetChild(i).gameObject;
         }
 
+
+
         //StartWave();  //Changed for testing purposes
-        StartCoroutine(SpawnNPCswithCoroutine());
+        //StartCoroutine(SpawnNPCswithCoroutine());
     }
 
     // Update is called once per frame
@@ -61,28 +64,22 @@ public class Spawner : MonoBehaviour
       
     }
 
-    private void SpawnInfected()
+    private void Spawn(GameObject NPC)
     {
         int spawnerID = Random.Range(0, spawners.Length);
-        var spawned = Instantiate(infected, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
+        var spawned = Instantiate(NPC, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
         SetVariables(spawned);
-        levelManager.numInfected++;
-    }
-    private void SpawnHealthy()
-    {
-        int spawnerID = Random.Range(0, spawners.Length);
-        var spawned = Instantiate(healthy, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
-        SetVariables(spawned);
-        levelManager.numHealthy++;
+        //levelManager.numInfected++;
     }
 
     private void SetVariables(GameObject spawned) { 
-        spawned.GetComponent<NPC>().centrePoint = centerPoint;
-        spawned.GetComponent<NPC>().levelManager = levelManager;
+        spawned.GetComponent<NPC>().centrePoint = centrePoint;
+        spawned.GetComponent<NPC>().spawner = this;
+        //spawned.GetComponent<NPC>().levelManager = levelManager;
     }
 
     
-    private void StartWave()
+    public void StartWave(List<int> waveT)
     {
         /* //waveNum = 1;
          infectedSpawnAmount = 4;
@@ -93,40 +90,41 @@ public class Spawner : MonoBehaviour
          {
              SpawnInfected();
          }*/
-
+        waveTemplate = waveT;
         StartCoroutine(SpawnNPCswithCoroutine());
 
 
     }
 
-    private void NextWave()
+/*    private void NextWave()   //Can probably just reuse startwave
     {
         //waveNum++;
-        infectedSpawnAmount += 4;
+        *//*infectedSpawnAmount += 4;
         //infectedCured = 0;
 
         for (int i = 0; i < infectedSpawnAmount; i++)
         {
-            SpawnInfected();
+            Spawn(infected);
         }
-
-    }
+*//*
+    }*/
 
 
     //This could be reused, update the spawn amount integers and call the method to start a new wave
     IEnumerator SpawnNPCswithCoroutine() {
-        for (int i = 0; i < healthySpawnAmount; ++i)
+        for (int i = 0; i < waveTemplate[0]; ++i)
         {
-            SpawnHealthy();
+            Spawn(healthy);
             yield return new WaitForSeconds(0.2f);
         }
 
-        for (int i = 0; i < infectedSpawnAmount; ++i)
+        for (int i = 0; i < waveTemplate[1]; ++i)
         {
-            SpawnInfected();
+            Spawn(infected);
             yield return new WaitForSeconds(0.2f);
         }
-        levelManager.initialized = true;
+        finishedSpawning = true;
+        //levelManager.initialized = true;
     }
 
 }
