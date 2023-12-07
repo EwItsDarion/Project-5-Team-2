@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
+using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,12 +21,15 @@ public class LevelManager : MonoBehaviour
 
     public List<Wave> waveTemplates;
 
+    public GameObject Player;
+
     public Spawner spawner;
     // Start is called before the first frame update
+    public GameObject waveButton;
 
     public Text scoreText;         
     public Slider slider;
-    public float FillSpeed = .05f;      //
+    public float FillSpeed = .05f;    
 
     private float targetProgress = 0;
     private void Awake()
@@ -35,7 +39,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         //IncrementProgress(0.75f);
-
+        wave = 0;
         isWaveActive = false;
         spawner.StartWave(waveTemplates[0]);
 
@@ -46,13 +50,23 @@ public class LevelManager : MonoBehaviour
     {
 
         if (spawner.finishedSpawning) { //can probably be changed, this is some sub-par logic to work with some slightly janky systems.
+            isWaveActive = true;
             totalNPC = spawner.numHealthy + spawner.numInfected;
             slider.maxValue = totalNPC;
             slider.value = 0;
             spawner.finishedSpawning = false; //so it only happens once
         }
 
-        
+        if (isWaveActive && spawner.numInfected == 0) { 
+            isWaveActive= false;
+            wave++;
+            EnableButton();
+        }
+
+/*        if (!isWaveActive) {
+            Player.GetComponent < FirstPersonController>().enabled = false;  //this might be dumb
+        }*/
+
 
 /*        if (gameOver == true) {
             if (wonDemo == true) //Game Over and Won
@@ -75,6 +89,14 @@ public class LevelManager : MonoBehaviour
                 }*/
         slider.value = spawner.numHealthy;
 
+    }
+
+    public void EnableButton() { 
+        waveButton.SetActive(true);
+    }
+
+    public void ActivateWave() {
+        spawner.StartWave(waveTemplates[wave]);
     }
 
     public void CheckWin() {

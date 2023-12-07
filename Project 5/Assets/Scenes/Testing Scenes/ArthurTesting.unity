@@ -606,7 +606,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1071649492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 568149830}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: ActivateWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1071649492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,6 +1017,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1656825423}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: slider
       value: 
       objectReference: {fileID: 1190461251}
@@ -1017,19 +1033,39 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1190461252}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveButton
+      value: 
+      objectReference: {fileID: 1071649489}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: isWaveActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].healthy
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[1].healthy
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[2].healthy
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].infected
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[1].infected
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[2].infected
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4677165996224855942, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
@@ -1041,6 +1077,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+--- !u!1 &1656825423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9100903310231206948, guid: 68dcc6130e195814187b3fab40ea8778, type: 3}
+  m_PrefabInstance: {fileID: 1034521363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1845812221 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4833286050890726767, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
