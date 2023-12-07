@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
 
-/*  public int numHealthy; // fairly unused right now, but can be used if we want to switch to a percentage win condition rather than completion
-    public int numInfected;*/
+    /*  public int numHealthy; // fairly unused right now, but can be used if we want to switch to a percentage win condition rather than completion
+        public int numInfected;*/
     public int totalNPC;  //Commented out because I want to 
     public int wave;
     public bool isWaveActive;
@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     //public bool wonDemo;
     public bool gameOver;
 
-    public List<List<int>> waveTemplates;
+    public List<Wave> waveTemplates;
 
     public Spawner spawner;
     // Start is called before the first frame update

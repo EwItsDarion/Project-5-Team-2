@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     //private int infectedCured = 0;
     public int numHealthy = 0;
 
-    public List<int> waveTemplate;
+    public Wave waveTemplate;
 
     public GameObject[] spawners;
 
@@ -79,7 +79,7 @@ public class Spawner : MonoBehaviour
     }
 
     
-    public void StartWave(List<int> waveT)
+    public void StartWave(Wave waveT)
     {
         /* //waveNum = 1;
          infectedSpawnAmount = 4;
@@ -112,13 +112,13 @@ public class Spawner : MonoBehaviour
 
     //This could be reused, update the spawn amount integers and call the method to start a new wave
     IEnumerator SpawnNPCswithCoroutine() {
-        for (int i = 0; i < waveTemplate[0]; ++i)
+        for (int i = 0; i < waveTemplate.healthy; ++i)
         {
             Spawn(healthy);
             yield return new WaitForSeconds(0.2f);
         }
 
-        for (int i = 0; i < waveTemplate[1]; ++i)
+        for (int i = 0; i < waveTemplate.infected; ++i)
         {
             Spawn(infected);
             yield return new WaitForSeconds(0.2f);

@@ -172,6 +172,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9042367465623738816, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
+      propertyPath: maskVisual
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 7b7cc3fa29266dc4d905d94a09935ba2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -250,7 +254,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numInfected: 0
   numHealthy: 0
-  waveTemplate: 
+  waveTemplate:
+    healthy: 0
+    infected: 0
+    healthyChild: 0
+    infectedChild: 0
+    healthySumo: 0
+    infectedSumo: 0
   spawners:
   - {fileID: 2066861429}
   - {fileID: 1567673098}
@@ -258,8 +268,9 @@ MonoBehaviour:
   - {fileID: 1150412545}
   infected: {fileID: 805304155707130652, guid: 6e04285578f8c5e41aeaf49a0a36bf6b, type: 3}
   healthy: {fileID: 1457866469621900, guid: 255eca44f584d234b85ab928bf1a924a, type: 3}
-  centerPoint: {fileID: 993740451}
+  centrePoint: {fileID: 993740451}
   infectedCount: 0
+  finishedSpawning: 0
 --- !u!4 &871543485
 Transform:
   m_ObjectHideFlags: 0
@@ -318,6 +329,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3193191586604270029, guid: 68dcc6130e195814187b3fab40ea8778, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1845812221}
+    - target: {fileID: 3193191586604270029, guid: 68dcc6130e195814187b3fab40ea8778, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 568149830}
     - target: {fileID: 6210259608754104619, guid: 68dcc6130e195814187b3fab40ea8778, type: 3}
       propertyPath: m_Name
       value: Player
@@ -775,6 +794,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5470244123885288389, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470244123885288389, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470244123885288389, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6289768270228506154, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -978,9 +1009,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1190461251}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 871543484}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1190461252}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: isWaveActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[0].healthy
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[0].infected
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4677165996224855942, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -990,6 +1041,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+--- !u!114 &1845812221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4833286050890726767, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+  m_PrefabInstance: {fileID: 1190461250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2040480396
 GameObject:
   m_ObjectHideFlags: 0
