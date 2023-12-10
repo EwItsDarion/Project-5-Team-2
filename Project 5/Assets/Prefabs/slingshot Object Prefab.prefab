@@ -271,7 +271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dcafb3bda973242a7d90fe8cc5f8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canShoot: 0
+  unlocked: 0
   mask: {fileID: 9007766806654612816, guid: 5c2864c3a0685004aadb068e959eeb40, type: 3}
   tempMask: {fileID: 9007766806654612816, guid: 5c2864c3a0685004aadb068e959eeb40, type: 3}
   projectileSpawnPosition1: {fileID: 6199863102130833655}
   stringforSling: {fileID: 2908443830087070158}
+  maskVisual: {fileID: 0}
