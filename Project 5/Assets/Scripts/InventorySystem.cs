@@ -7,7 +7,7 @@ public class InventorySystem : MonoBehaviour
     public Weapon[] weapons;
     public Weapon currWeapon;
     private int weaponNum;
-    
+    private int unlockedWeapons;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,13 @@ public class InventorySystem : MonoBehaviour
         }
         weaponNum = 0;
         EquipItem(weaponNum);
+        unlockedWeapons = 2;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             weapons[weapons.Length - 1].gameObject.SetActive(false);
             weaponNum = 0;
@@ -35,12 +36,12 @@ public class InventorySystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             weaponNum = 2;
-            weapons[0].gameObject.SetActive(false);
         }
+
 
         if (Input.GetAxisRaw("Mouse ScrollWheel")>0)
         {
-            if (weaponNum >= weapons.Length - 1)
+            if (weaponNum >= unlockedWeapons - 1)
             {
                 weapons[weapons.Length-1].gameObject.SetActive(false);
                 weaponNum = 0;
@@ -54,7 +55,7 @@ public class InventorySystem : MonoBehaviour
         {
             if (weaponNum <= 0)
             {
-                weaponNum = weapons.Length - 1;
+                weaponNum = unlockedWeapons-1;
                 weapons[0].gameObject.SetActive(false);
             }
             else
@@ -63,17 +64,24 @@ public class InventorySystem : MonoBehaviour
             }
             
         }
-        if(weaponNum<weapons.Length)
-        EquipItem(weaponNum);
+
+        weapons[unlockedWeapons-1].unlocked = true;
+
+        if (weapons[weaponNum].IsUnlocked())
+            EquipItem(weaponNum);
         else
         {
             weaponNum = weapons.Length - 1;
         }
+
+        if (weaponNum == unlockedWeapons - 1 && unlockedWeapons > 1)
+            weapons[0].gameObject.SetActive(false);
         //if (weapons[weaponNum].unlocked)
         //{
         //    Debug.Log(weapons[weaponNum].IsUnlocked());
         //    EquipItem(weaponNum);
         //}
+
     }
 
 

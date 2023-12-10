@@ -16,7 +16,7 @@ public class MaskCannon : Weapon
 
     private void Awake()
     {
-        unlocked = true;
+        unlocked = false;
     }
 
     // Start is called before the first frame update
