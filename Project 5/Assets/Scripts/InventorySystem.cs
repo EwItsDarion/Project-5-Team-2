@@ -17,7 +17,7 @@ public class InventorySystem : MonoBehaviour
         }
         weaponNum = 0;
         EquipItem(weaponNum);
-        unlockedWeapons = 2;
+        unlockedWeapons = 1;
     }
 
     // Update is called once per frame

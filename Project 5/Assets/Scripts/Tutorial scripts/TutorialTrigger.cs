@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TutorialTrigger : MonoBehaviour
-{
-    public Weapon maskCannon;
-    public GameObject entry3;
-    public GameObject spawner;
+{ 
+    public TutorialManager manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,21 +24,19 @@ public class TutorialTrigger : MonoBehaviour
             Debug.Log("Entered");
             if (gameObject.name == "TutorialTrigger1")
             {
-                GameObject.Find("Entry1").SetActive(false);
+                manager.trigger1Enter = true;
             }
             if (gameObject.name == "TutorialTrigger2")
             {
-                GameObject.Find("Entry2").SetActive(false);
+                manager.trigger2Enter = true;
             }
             if (gameObject.name == "TutorialTrigger3")
             {
-                entry3.gameObject.SetActive(false);
-                maskCannon.gameObject.SetActive(true);
-                spawner.SetActive(true);
+                manager.trigger3Enter = true;
             }
             if (gameObject.name == "TutorialTrigger4")
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                manager.trigger4Enter = true;
             }
         }
     }

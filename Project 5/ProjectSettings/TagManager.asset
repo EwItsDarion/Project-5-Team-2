@@ -12,6 +12,7 @@ TagManager:
   - mine(projectile)
   - Mine Blast collider
   - Projectile
+  - Sphere
   layers:
   - Default
   - TransparentFX
