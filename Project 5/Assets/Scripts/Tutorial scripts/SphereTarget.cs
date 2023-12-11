@@ -5,17 +5,22 @@ using UnityEngine;
 public class SphereTarget : MonoBehaviour
 {
     int health;
+    public ParticleSystem particles;
     // Start is called before the first frame update
     void Start()
     {
-        health = 5;
+        health = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (health == 0)
+        {
+            particles.Play();
             Destroy(gameObject);
+            
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -23,8 +28,8 @@ public class SphereTarget : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             health--;
-            GetComponent<Transform>().localScale -= new Vector3(.5f, .5f, .5f);
             Destroy(collision.gameObject);
+           
 
         }
 
