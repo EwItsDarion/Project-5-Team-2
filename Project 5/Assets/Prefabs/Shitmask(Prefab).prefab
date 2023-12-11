@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shitmask(Prefab)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7b7cc3fa29266dc4d905d94a09935ba2, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: 7b7cc3fa29266dc4d905d94a09935ba2, type: 3}

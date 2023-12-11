@@ -23,6 +23,7 @@ public class SphereTarget : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             health--;
+            GetComponent<Transform>().localScale -= new Vector3(.5f, .5f, .5f);
             Destroy(collision.gameObject);
 
         }
