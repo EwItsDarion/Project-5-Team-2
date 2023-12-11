@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 public class TutorialManager : MonoBehaviour
 {
     public Weapon slingShot,maskGun,mine;
-    public GameObject spawner;
+    public GameObject spawner,levelManager;
     public GameObject inventorySystem;
     public GameObject entry1, entry2, entry3;
 
-    public bool trigger1Enter, trigger2Enter, trigger3Enter, trigger4Enter;
+    public bool trigger1Enter, trigger2Enter, trigger3Enter, trigger4Enter, trigger5Enter,triggerFinalEnter;
 
     public GameObject slingShotTutorialPanel, maskGunTutorialPanel, mineTutorialPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        trigger1Enter = trigger2Enter = trigger3Enter = trigger4Enter = false;
+        trigger1Enter = trigger2Enter = trigger3Enter = trigger4Enter = trigger5Enter = triggerFinalEnter = false;
     }
 
     // Update is called once per frame
@@ -42,11 +42,30 @@ public class TutorialManager : MonoBehaviour
             }
 
                 spawner.SetActive(true);
+            levelManager.SetActive(true);
+            }
+
+            if(trigger4Enter==true)
+            {
+
+            slingShot.gameObject.SetActive(false);
+            slingShotTutorialPanel.gameObject.SetActive(false);
+
+            maskGun.gameObject.SetActive(true);
+            maskGunTutorialPanel.gameObject.SetActive(true);
             }
 
 
+        if (trigger5Enter == true)
+        {
+            maskGun.gameObject.SetActive(false);
+            maskGunTutorialPanel.gameObject.SetActive(false);
 
-            if (trigger4Enter)
+            mine.gameObject.SetActive(true);
+            mineTutorialPanel.gameObject.SetActive(true);
+        }
+
+        if (triggerFinalEnter)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }

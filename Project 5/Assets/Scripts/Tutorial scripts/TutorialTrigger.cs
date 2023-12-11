@@ -38,6 +38,14 @@ public class TutorialTrigger : MonoBehaviour
             {
                 manager.trigger4Enter = true;
             }
+            if (gameObject.name == "TutorialTrigger5")
+            {
+                manager.trigger5Enter = true;
+            }
+            if (gameObject.name == "TutorialTriggerFinal")
+            {
+                manager.triggerFinalEnter = true;
+            }
         }
     }
 }
