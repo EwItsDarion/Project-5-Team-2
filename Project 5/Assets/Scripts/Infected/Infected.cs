@@ -13,6 +13,7 @@ namespace Assets.Scripts
         public float timeToCoughHigh;
 
         private SphereCollider coughRadius;
+        private bool isDead = false;
 
 
         protected override void Awake()
@@ -26,13 +27,17 @@ namespace Assets.Scripts
         protected override void Die()
         {
             Debug.Log("InfectedDead");
-            GameObject swap = Instantiate(healthyPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            //swap.GetComponent<NPC>().centrePoint = centrePoint; //Defines centerpoint of NPC movement radius programmatically on swap
-            SetVariables(swap);
-            spawner.numInfected--;
-            /*levelManager.numHealthy++;*/
-            //levelManager.CheckWin();
-            Destroy(gameObject);
+            if (!isDead)
+            {
+                isDead = true;
+                GameObject swap = Instantiate(healthyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                //swap.GetComponent<NPC>().centrePoint = centrePoint; //Defines centerpoint of NPC movement radius programmatically on swap
+                SetVariables(swap);
+                spawner.numInfected--;
+                /*levelManager.numHealthy++;*/
+                //levelManager.CheckWin();
+                Destroy(gameObject);
+            }
         }
 
         protected void CoughHit(LivingThing hitObject) {
@@ -49,6 +54,8 @@ namespace Assets.Scripts
 
         // Update is called once per frame
         protected void Update()
+
+
         {
             base.Update();
         }

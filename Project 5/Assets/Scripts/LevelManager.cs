@@ -27,9 +27,9 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject waveButton;
 
-    public Text scoreText;         
+    public Text scoreText;
     public Slider slider;
-    public float FillSpeed = .05f;    
+    public float FillSpeed = .05f;
 
     private float targetProgress = 0;
     private void Awake()
@@ -49,7 +49,8 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
 
-        if (spawner.finishedSpawning) { //can probably be changed, this is some sub-par logic to work with some slightly janky systems.
+        if (spawner.finishedSpawning)
+        { //can probably be changed, this is some sub-par logic to work with some slightly janky systems.
             isWaveActive = true;
             totalNPC = spawner.numHealthy + spawner.numInfected;
             slider.maxValue = totalNPC;
@@ -57,28 +58,29 @@ public class LevelManager : MonoBehaviour
             spawner.finishedSpawning = false; //so it only happens once
         }
 
-        if (isWaveActive && spawner.numInfected == 0) { 
-            isWaveActive= false;
+        if (isWaveActive && spawner.numInfected == 0)
+        {
+            isWaveActive = false;
             wave++;
             EnableButton();
         }
 
-/*        if (!isWaveActive) {
-            Player.GetComponent < FirstPersonController>().enabled = false;  //this might be dumb
-        }*/
+        /*        if (!isWaveActive) {
+                    Player.GetComponent < FirstPersonController>().enabled = false;  //this might be dumb
+                }*/
 
 
-/*        if (gameOver == true) {
-            if (wonDemo == true) //Game Over and Won
-            {
-                scoreText.text = "You Survived!" + "\n" + "Press R to try Again!";
-            }
-            else { //Game Over and Lost
-                scoreText.text = "You Got Infected!" + "\n" + "Press R to try Again!";
-            }
-        }*/
+        /*        if (gameOver == true) {
+                    if (wonDemo == true) //Game Over and Won
+                    {
+                        scoreText.text = "You Survived!" + "\n" + "Press R to try Again!";
+                    }
+                    else { //Game Over and Lost
+                        scoreText.text = "You Got Infected!" + "\n" + "Press R to try Again!";
+                    }
+                }*/
 
-        if(gameOver && Input.GetKeyUp(KeyCode.R)) 
+        if (gameOver && Input.GetKeyUp(KeyCode.R))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
@@ -91,23 +93,27 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public void EnableButton() { 
+    public void EnableButton()
+    {
         waveButton.SetActive(true);
     }
 
-    public void ActivateWave() {
+    public void ActivateWave()
+    {
         spawner.StartWave(waveTemplates[wave]);
     }
 
-    public void CheckWin() {
-        if (spawner.numInfected == 0) {
-            isWaveActive = false ;
+    public void CheckWin()
+    {
+        if (spawner.numInfected == 0)
+        {
+            isWaveActive = false;
             gameOver = true;
         }
     }
 
-/*    public void IncrementProgress(float newProgress)
-    {
-       targetProgress = slider.value + newProgress;
-    }*/
+    /*    public void IncrementProgress(float newProgress)
+        {
+           targetProgress = slider.value + newProgress;
+        }*/
 }

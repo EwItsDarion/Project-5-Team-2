@@ -7,8 +7,7 @@ public class Wave
 {
     public int healthy;
     public int infected;
-    public int healthyChild;
-    public int infectedChild;
-    public int healthySumo;
-    public int infectedSumo;
+    public int baby;
+    public int sumo;
+
 }

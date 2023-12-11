@@ -33,15 +33,15 @@ public class Spawner : MonoBehaviour
     public bool finishedSpawning;
 
     //public Text waveNum;
-   
+
 
     // Start is called before the first frame update
     void Start()
     {
         finishedSpawning = false;
         //spawners = new GameObject[5];
-        
-        for(int i = 0; i < spawners.Length; i++)
+
+        for (int i = 0; i < spawners.Length; i++)
         {
             spawners[i] = transform.GetChild(i).gameObject;
         }
@@ -55,13 +55,13 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-/*        infectedCount = GameObject.FindGameObjectsWithTag("Infected").Length;
+        /*        infectedCount = GameObject.FindGameObjectsWithTag("Infected").Length;
 
-        if(infectedCount == 0)
-        {
-            StartWave();    // genuinely don't know why this would cause such an explosion in spawning but this is what I commented out and now it seems fine
-        }*/
-      
+                if(infectedCount == 0)
+                {
+                    StartWave();    // genuinely don't know why this would cause such an explosion in spawning but this is what I commented out and now it seems fine
+                }*/
+
     }
 
     private void Spawn(GameObject NPC)
@@ -72,13 +72,14 @@ public class Spawner : MonoBehaviour
         //levelManager.numInfected++;
     }
 
-    private void SetVariables(GameObject spawned) { 
+    private void SetVariables(GameObject spawned)
+    {
         spawned.GetComponent<NPC>().centrePoint = centrePoint;
         spawned.GetComponent<NPC>().spawner = this;
         //spawned.GetComponent<NPC>().levelManager = levelManager;
     }
 
-    
+
     public void StartWave(Wave waveT)
     {
         /* //waveNum = 1;
@@ -96,22 +97,23 @@ public class Spawner : MonoBehaviour
 
     }
 
-/*    private void NextWave()   //Can probably just reuse startwave
-    {
-        //waveNum++;
-        *//*infectedSpawnAmount += 4;
-        //infectedCured = 0;
-
-        for (int i = 0; i < infectedSpawnAmount; i++)
+    /*    private void NextWave()   //Can probably just reuse startwave
         {
-            Spawn(infected);
-        }
-*//*
-    }*/
+            //waveNum++;
+            *//*infectedSpawnAmount += 4;
+            //infectedCured = 0;
+
+            for (int i = 0; i < infectedSpawnAmount; i++)
+            {
+                Spawn(infected);
+            }
+    *//*
+        }*/
 
 
     //This could be reused, update the spawn amount integers and call the method to start a new wave
-    IEnumerator SpawnNPCswithCoroutine() {
+    IEnumerator SpawnNPCswithCoroutine()
+    {
         for (int i = 0; i < waveTemplate.healthy; ++i)
         {
             Spawn(healthy);
