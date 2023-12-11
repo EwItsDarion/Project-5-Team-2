@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     private int numTotal;               //Move 15-23 to a game Manager ?
     //public bool wonDemo;
     public bool gameOver;
+    public bool waveInitialized;
 
     public List<Wave> waveTemplates;
 
@@ -25,9 +26,10 @@ public class LevelManager : MonoBehaviour
 
     public Spawner spawner;
     // Start is called before the first frame update
-    public GameObject waveButton;
+    //public GameObject waveButton;
 
     public Text scoreText;
+    public Text waveTransition;
     public Slider slider;
     public float FillSpeed = .05f;
 
@@ -41,7 +43,7 @@ public class LevelManager : MonoBehaviour
         //IncrementProgress(0.75f);
         wave = 0;
         isWaveActive = false;
-        spawner.StartWave(waveTemplates[0]);
+        ActivateWave();
 
     }
 
@@ -49,20 +51,30 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
 
-        if (spawner.finishedSpawning)
+        if (spawner.finishedSpawning && !waveInitialized)
         { //can probably be changed, this is some sub-par logic to work with some slightly janky systems.
+            waveInitialized = true;
             isWaveActive = true;
             totalNPC = spawner.numHealthy + spawner.numInfected;
             slider.maxValue = totalNPC;
             slider.value = 0;
-            spawner.finishedSpawning = false; //so it only happens once
+            //spawner.finishedSpawning = false; //so it only happens once
         }
 
-        if (isWaveActive && spawner.numInfected == 0)
+        if (isWaveActive && spawner.numInfected == 0)  //Boolean logic between this conditional and the one after it feels mega cringe but should work
         {
+            Debug.Log("FUCK");
             isWaveActive = false;
             wave++;
-            EnableButton();
+            waveTransition.enabled = true;
+            
+        }
+
+        if (!isWaveActive && spawner.finishedSpawning) { 
+            if (Input.GetKeyDown(KeyCode.E)) {
+                ActivateWave();
+                waveTransition.enabled = false;
+            }
         }
 
         /*        if (!isWaveActive) {
@@ -93,13 +105,14 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public void EnableButton()
+/*    public void EnableButton()
     {
         waveButton.SetActive(true);
-    }
+    }*/
 
     public void ActivateWave()
     {
+        waveInitialized= false;
         spawner.StartWave(waveTemplates[wave]);
     }
 

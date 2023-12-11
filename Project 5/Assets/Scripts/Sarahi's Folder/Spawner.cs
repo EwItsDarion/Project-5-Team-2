@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
     public Transform centrePoint;
 
     // keep track of enemy count and 
-    public int infectedCount;
+    //public int infectedCount;
 
     public bool finishedSpawning;
 
@@ -92,6 +92,8 @@ public class Spawner : MonoBehaviour
              SpawnInfected();
          }*/
         waveTemplate = waveT;
+        finishedSpawning = false;
+        Debug.Log("false");
         StartCoroutine(SpawnNPCswithCoroutine());
 
 
@@ -126,6 +128,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
         finishedSpawning = true;
+        Debug.Log("true");
         //levelManager.initialized = true;
     }
 
