@@ -27,7 +27,6 @@ public class MineWeapon : Weapon
     // Update is called once per frame
     void Update()
     {
-
         if (canShoot == true)
             meshRender1.enabled = meshRender2.enabled = true;
 

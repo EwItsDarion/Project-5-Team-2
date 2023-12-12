@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class InventorySystem : MonoBehaviour
 {
     public Weapon[] weapons;
@@ -17,12 +17,22 @@ public class InventorySystem : MonoBehaviour
         }
         weaponNum = 0;
         EquipItem(weaponNum);
+
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+            unlockedWeapons = 3;
+        else
         unlockedWeapons = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            weapons[1].unlocked = true;
+            weapons[2].unlocked = true;
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             weapons[weapons.Length - 1].gameObject.SetActive(false);
@@ -38,13 +48,12 @@ public class InventorySystem : MonoBehaviour
             weaponNum = 2;
         }
 
-
         if (Input.GetAxisRaw("Mouse ScrollWheel")>0)
         {
             if (weaponNum >= unlockedWeapons - 1)
             {
-                weapons[weapons.Length-1].gameObject.SetActive(false);
                 weaponNum = 0;
+                weapons[weapons.Length - 1].gameObject.SetActive(false);
             }
             else
             {
@@ -64,8 +73,6 @@ public class InventorySystem : MonoBehaviour
             }
             
         }
-
-        weapons[unlockedWeapons-1].unlocked = true;
 
         if (weapons[weaponNum].IsUnlocked())
             EquipItem(weaponNum);
@@ -98,4 +105,10 @@ public class InventorySystem : MonoBehaviour
         weapons[weaponNum].gameObject.SetActive(true);
         
     }
+
+    private void OnEnable()
+    {
+        Start();
+    }
+
 }

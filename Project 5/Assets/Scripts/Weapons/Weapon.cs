@@ -22,7 +22,6 @@ public class Weapon : MonoBehaviour
         //change while to till game over maybe?
         while (true)
         {
-
             yield return new WaitForSeconds(1f);
             if (canShoot == false)
             {
