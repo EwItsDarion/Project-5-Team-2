@@ -29,14 +29,19 @@ public class LevelManager : MonoBehaviour
     //public GameObject waveButton;
 
     public Text scoreText;
-    public Text waveTransition;
+    public Text dialogueText;
+    public string dialogueCharacter = "Dr. Bright";
+    public List<string> currentDialogue;
+    public bool isDialogueActive;
+    public Queue<string> dialogueQueue;
+
     public Slider slider;
     public float FillSpeed = .05f;
 
     private float targetProgress = 0;
     private void Awake()
     {
-        //slider = gameObject.GetComponent<Slider>();
+        dialogueQueue = new Queue<string>();
     }
     void Start()
     {
@@ -46,11 +51,34 @@ public class LevelManager : MonoBehaviour
         wonLevel = false;
         ActivateWave();
 
+        dialogueQueue.Enqueue("Welcome to the simulation. Please try your best to survive.");
+        dialogueQueue.Enqueue("Prepare for the first wave...");
+        dialogueText.text = dialogueQueue.Dequeue();
+        isDialogueActive = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isDialogueActive && dialogueQueue.Count > 0) 
+        {
+            dialogueText.text = dialogueQueue.Dequeue();
+
+            if(dialogueQueue.Count == 0)
+            {
+                isDialogueActive = false;
+            }
+
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.N) && !isDialogueActive)
+        {
+            dialogueQueue.Enqueue("Preparing for the next wave...");
+            dialogueText.text = dialogueQueue.Dequeue();
+            isDialogueActive = true;
+        }
 
         if (spawner.finishedSpawning && !waveInitialized) //UI update logic, if the spawner is finished spawning, and the wave hasn't been initialized(shitty name for UI update after spawner finishes)
         { //can probably be changed, this is some sub-par logic to work with some slightly janky systems.
@@ -68,7 +96,7 @@ public class LevelManager : MonoBehaviour
             wave++;
             if (wave < waveTemplates.Count)
             { //Are all waves done? if no
-                waveTransition.enabled = true;
+                dialogueText.enabled = true;
             }
             else { //finished with level when all waves are done
                 wonLevel = true;
@@ -80,7 +108,7 @@ public class LevelManager : MonoBehaviour
         if (!isWaveActive && spawner.finishedSpawning) { //If the wave is not active and the spawner isn't spawning, then this is probably after a wave has been completed
             if (Input.GetKeyDown(KeyCode.E)) {
                 ActivateWave();
-                waveTransition.enabled = false;
+                dialogueText.enabled = false;
             }
         }
 
@@ -125,6 +153,10 @@ public class LevelManager : MonoBehaviour
 
     public void ActivateWave()
     {
+        dialogueQueue.Enqueue(dialogueCharacter + ": Starting wave " + wave);
+        dialogueText.text = dialogueQueue.Dequeue();
+        isDialogueActive = true;
+
         waveInitialized= false;
         spawner.StartWave(waveTemplates[wave]);
     }

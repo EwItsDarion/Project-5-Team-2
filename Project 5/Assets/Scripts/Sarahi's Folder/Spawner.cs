@@ -23,6 +23,8 @@ public class Spawner : MonoBehaviour
     //Prefabs
     public GameObject infected;     //prefabs 
     public GameObject healthy;
+    public GameObject sumo;
+    public GameObject baby;
 
     public Transform centrePoint;   //center of the space for NPCs to move
 
