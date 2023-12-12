@@ -12,25 +12,24 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-    //private int waveNum = 0;
-    public int numInfected = 0;
-    //private int infectedCured = 0;
-    public int numHealthy = 0;
 
-    public Wave waveTemplate;
+    public int numInfected = 0;  //THIS IS FOR OBSERVATION DURING TESTING, CONTROL OF UI, AND WAVE MANAGEMENT, IT IS UPDATED BY THE SCRIPTS
+    public int numHealthy = 0;  //THIS IS FOR OBSERVATION DURING TESTING, CONTROL OF UI, AND WAVE MANAGEMENT, IT IS UPDATED BY THE SCRIPTS
 
-    public GameObject[] spawners;
+    private Wave waveTemplate;  //I've made this private because it was confusing before. even though the design is still confusing, won't be confusing in the inspector anymore
+
+    public GameObject[] spawners; //list of spawners
 
     //Prefabs
-    public GameObject infected;
+    public GameObject infected;     //prefabs 
     public GameObject healthy;
 
-    public Transform centrePoint;
+    public Transform centrePoint;   //center of the space for NPCs to move
 
     // keep track of enemy count and 
     //public int infectedCount;
 
-    public bool finishedSpawning;
+    public bool finishedSpawning;   //Helps to initialize waves and UI
 
     //public Text waveNum;
 
