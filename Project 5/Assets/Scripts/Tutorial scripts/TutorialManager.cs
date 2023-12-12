@@ -9,14 +9,15 @@ public class TutorialManager : MonoBehaviour
     public GameObject inventorySystem;
     public GameObject entry1, entry2, entry3;
 
-    public bool trigger1Enter, trigger2Enter, trigger3Enter, trigger4Enter, trigger5Enter,triggerFinalEnter;
+    public bool trigger1Enter, trigger2Enter, trigger3Enter, trigger4Enter, trigger5Enter, trigger6Enter,triggerFinalEnter;
 
-    public GameObject slingShotTutorialPanel, maskGunTutorialPanel, mineTutorialPanel;
+    public GameObject slingShotTutorialPanel, maskGunTutorialPanel, mineTutorialPanel,inventoryTutorialPanel,healthBarTutorial,progressBarTutorial;
+    public GameObject healthBar, progressBar, reticle;
 
     // Start is called before the first frame update
     void Start()
     {
-        trigger1Enter = trigger2Enter = trigger3Enter = trigger4Enter = trigger5Enter = triggerFinalEnter = false;
+        trigger1Enter = trigger2Enter = trigger3Enter = trigger4Enter = trigger5Enter = trigger6Enter=triggerFinalEnter = false;
     }
 
     // Update is called once per frame
@@ -30,9 +31,15 @@ public class TutorialManager : MonoBehaviour
             {
                 entry2.SetActive(false);
             }
+
             if (trigger3Enter==true)
             {
-                slingShot.gameObject.SetActive(true);
+
+            reticle.SetActive(true);
+            healthBar.SetActive(true);
+            healthBarTutorial.SetActive(true);
+
+            slingShot.gameObject.SetActive(true);
             slingShotTutorialPanel.gameObject.SetActive(true);
 
             if (GameObject.FindGameObjectWithTag("Sphere") == null)
@@ -50,6 +57,12 @@ public class TutorialManager : MonoBehaviour
 
             slingShot.gameObject.SetActive(false);
             slingShotTutorialPanel.gameObject.SetActive(false);
+            
+
+
+            progressBar.SetActive(true);
+            healthBarTutorial.SetActive(false);
+            progressBarTutorial.SetActive(true);
 
             maskGun.gameObject.SetActive(true);
             maskGunTutorialPanel.gameObject.SetActive(true);
@@ -65,13 +78,33 @@ public class TutorialManager : MonoBehaviour
             mineTutorialPanel.gameObject.SetActive(true);
         }
 
+
+        if (trigger6Enter == true)
+        {
+
+            mine.gameObject.SetActive(false);
+            mineTutorialPanel.gameObject.SetActive(false);
+
+            inventoryTutorialPanel.SetActive(true);
+            inventorySystem.SetActive(true);
+          
+        }
+
         if (triggerFinalEnter)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            LoadNextScene();
             }
         }
-        
+
+    void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+}
+
+
+
 
 
 

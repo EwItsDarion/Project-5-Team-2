@@ -42,6 +42,12 @@ public class TutorialTrigger : MonoBehaviour
             {
                 manager.trigger5Enter = true;
             }
+
+            if (gameObject.name == "TutorialTrigger6")
+            {
+                manager.trigger6Enter = true;
+            }
+
             if (gameObject.name == "TutorialTriggerFinal")
             {
                 manager.triggerFinalEnter = true;
