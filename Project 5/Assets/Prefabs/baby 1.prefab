@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 780706955902990727}
   - component: {fileID: 3408408257240476489}
   - component: {fileID: 8766093175003607038}
-  - component: {fileID: 4249787214621071877}
+  - component: {fileID: -8023844159995756812}
   m_Layer: 0
   m_Name: baby 1
   m_TagString: Player
@@ -648,7 +648,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &4249787214621071877
+--- !u!114 &-8023844159995756812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3666556019471685688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c5481febbbcfcc4d876581f36a04b5d, type: 3}
+  m_Script: {fileID: 11500000, guid: b97a6460ad2222a4a9552ea43fc46068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
@@ -666,7 +666,7 @@ MonoBehaviour:
   centrePoint: {fileID: 0}
   spawner: {fileID: 0}
   damage: 0
-  healthyPrefab: {fileID: 0}
+  healthyPrefab: {fileID: 1457866469621900, guid: 255eca44f584d234b85ab928bf1a924a, type: 3}
   timeToCoughLow: 0
   timeToCoughHigh: 0
 --- !u!1 &3904953796693288753
