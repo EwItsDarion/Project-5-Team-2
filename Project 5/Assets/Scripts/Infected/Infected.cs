@@ -12,6 +12,10 @@ namespace Assets.Scripts
         public float timeToCoughLow;
         public float timeToCoughHigh;
 
+        public AudioClip cough;
+        private ParticleSystem coughParticle;
+        
+
         private SphereCollider coughRadius;
         private bool isDead = false;
 
@@ -23,6 +27,7 @@ namespace Assets.Scripts
             timeToCoughLow = 1f;
             timeToCoughHigh = 6f;
             coughRadius = gameObject.GetComponent<SphereCollider>();
+            coughParticle = GetComponent<ParticleSystem>();
         }
         protected override void Die()
         {
@@ -65,6 +70,8 @@ namespace Assets.Scripts
 
             while(health > 0) {
                 coughRadius.enabled = true;
+                audioSource.PlayOneShot(cough);
+                coughParticle.Play();
                 yield return new WaitForSeconds(0.25f);
                 coughRadius.enabled = false;
                 yield return new WaitForSeconds(Random.Range(timeToCoughLow, timeToCoughHigh));
@@ -84,6 +91,8 @@ namespace Assets.Scripts
 
         public override void headHit(Projectile projectile)
         {
+            Debug.Log("l;kjashndgl;jahsdg");
+            audioSource.PlayOneShot(hitSound, 2.0f);
             TakeDamage(projectile.damage);
         }
     }

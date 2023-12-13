@@ -16,9 +16,13 @@ public abstract class NPC : LivingThing
     //public LevelManager levelManager;
     public Spawner spawner;
 
+    protected AudioSource audioSource;
+    public AudioClip hitSound;
+
     protected override void Awake()
     {
         base.Awake();
+        audioSource = GetComponent<AudioSource>();
         speed = 3.5f;
         range = 75f;
         nav = gameObject.GetComponent<NavMeshAgent>();

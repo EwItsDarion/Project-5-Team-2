@@ -223,6 +223,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 871543485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &770588169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770588170}
+  - component: {fileID: 770588172}
+  - component: {fileID: 770588171}
+  m_Layer: 5
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &770588170
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770588169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1190461253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: -13.346}
+  m_SizeDelta: {x: 221.976, y: 66.6926}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &770588171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770588169}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.30492198, g: 0.9150943, b: 0.25467247, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Wave Complete! Press E to start next wave
+
+'
+--- !u!222 &770588172
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770588169}
+  m_CullTransparentMesh: 1
 --- !u!1 &871543483
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,11 +335,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numInfected: 0
   numHealthy: 0
-  waveTemplate:
-    healthy: 0
-    infected: 0
-    baby: 0
-    sumo: 0
   spawners:
   - {fileID: 2066861429}
   - {fileID: 1567673098}
@@ -266,8 +342,9 @@ MonoBehaviour:
   - {fileID: 1150412545}
   infected: {fileID: 805304155707130652, guid: 6e04285578f8c5e41aeaf49a0a36bf6b, type: 3}
   healthy: {fileID: 1457866469621900, guid: 255eca44f584d234b85ab928bf1a924a, type: 3}
+  sumo: {fileID: 0}
+  baby: {fileID: 0}
   centrePoint: {fileID: 993740451}
-  infectedCount: 0
   finishedSpawning: 0
 --- !u!4 &871543485
 Transform:
@@ -673,15 +750,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5470244123885288389, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5470244123885288389, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5470244123885288389, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6289768270228506154, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
       propertyPath: m_Name
@@ -773,6 +850,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8183960598006680176, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1640450938}
+    - targetCorrespondingSourceObject: {fileID: 8183960598006680176, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 770588170}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
 --- !u!114 &1190461251 stripped
@@ -902,6 +982,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 770588171}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: isWaveActive
       value: 0
       objectReference: {fileID: 0}
@@ -911,11 +995,11 @@ PrefabInstance:
       objectReference: {fileID: 1640450939}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].healthy
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].healthy
@@ -927,7 +1011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].infected
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].infected

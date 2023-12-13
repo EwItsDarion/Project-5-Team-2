@@ -39,7 +39,9 @@ namespace Assets.Scripts
 
         public override void headHit(Projectile projectile)
         {
+            audioSource.PlayOneShot(hitSound);
             if (!masked) {
+                
                 masked = true;
                 health += projectile.damage; //maybe needs alteration or balance, this behavior is to increase defense against coughs, in other words,
                                             // pre-shooting a mask onto a healthy individual gives them 2 coughs instead of one before being infected
