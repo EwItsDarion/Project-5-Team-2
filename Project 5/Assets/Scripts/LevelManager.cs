@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class LevelManager : MonoBehaviour
 {
 
@@ -61,11 +62,11 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDialogueActive && dialogueQueue.Count > 0) 
+        if (isDialogueActive && dialogueQueue.Count > 0)
         {
             dialogueText.text = dialogueQueue.Dequeue();
 
-            if(dialogueQueue.Count == 0)
+            if (dialogueQueue.Count == 0)
             {
                 isDialogueActive = false;
             }
@@ -98,22 +99,26 @@ public class LevelManager : MonoBehaviour
             { //Are all waves done? if no
                 dialogueText.enabled = true;
             }
-            else { //finished with level when all waves are done
+            else
+            { //finished with level when all waves are done
                 wonLevel = true;
                 gameOver = true; //we probably need a different name and also behavior for this
             }
-            
+
         }
 
-        if (!isWaveActive && spawner.finishedSpawning) { //If the wave is not active and the spawner isn't spawning, then this is probably after a wave has been completed
-            if (Input.GetKeyDown(KeyCode.E)) {
+        if (!isWaveActive && spawner.finishedSpawning)
+        { //If the wave is not active and the spawner isn't spawning, then this is probably after a wave has been completed
+            if (Input.GetKeyDown(KeyCode.E))
+            {
                 ActivateWave();
                 dialogueText.enabled = false;
             }
         }
 
 
-        if (Player.GetComponent<Player>().health <= 0) { // if player dies, end level.
+        if (Player.GetComponent<Player>().health <= 0)
+        { // if player dies, end level.
             gameOver = true;
             wonLevel = false;
         }
@@ -123,15 +128,17 @@ public class LevelManager : MonoBehaviour
                 }*/
 
 
-                if (gameOver == true) {
-                    if (wonLevel == true) //Game Over and Won
-                    {
-                        scoreText.text = "You Survived!" + "\n" + "Press R to try Again!";
-                    }
-                    else { //Game Over and Lost
-                        scoreText.text = "You Got Infected!" + "\n" + "Press R to try Again!";
-                    }
-                }
+        if (gameOver == true)
+        {
+            if (wonLevel == true) //Game Over and Won
+            {
+                scoreText.text = "You Survived!" + "\n" + "Press R to try Again!";
+            }
+            else
+            { //Game Over and Lost
+                scoreText.text = "You Got Infected!" + "\n" + "Press R to try Again!";
+            }
+        }
 
         if (gameOver && Input.GetKeyUp(KeyCode.R))
         {
@@ -146,10 +153,10 @@ public class LevelManager : MonoBehaviour
 
     }
 
-/*    public void EnableButton()
-    {
-        waveButton.SetActive(true);
-    }*/
+    /*    public void EnableButton()
+        {
+            waveButton.SetActive(true);
+        }*/
 
     public void ActivateWave()
     {
@@ -157,7 +164,7 @@ public class LevelManager : MonoBehaviour
         dialogueText.text = dialogueQueue.Dequeue();
         isDialogueActive = true;
 
-        waveInitialized= false;
+        waveInitialized = false;
         spawner.StartWave(waveTemplates[wave]);
     }
 

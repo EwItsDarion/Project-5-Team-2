@@ -128,9 +128,22 @@ public class Spawner : MonoBehaviour
             Spawn(infected);
             yield return new WaitForSeconds(0.2f);
         }
+
         finishedSpawning = true;
         Debug.Log("true");
         //levelManager.initialized = true;
+
+        for (int i = 0; i < waveTemplate.sumo; ++i)
+        {
+            Spawn(sumo);
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        for (int i = 0; i < waveTemplate.baby; ++i)
+        {
+            Spawn(baby);
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 
 }
