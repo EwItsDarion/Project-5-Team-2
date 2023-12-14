@@ -147,7 +147,7 @@ public class LevelManager : MonoBehaviour
 
         if (gameOver && !wonLevel && Input.GetKeyUp(KeyCode.R))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(GameManager.Instance.CurrentLevelname);
+            GameManager.Instance.NextLevel(GameManager.Instance.CurrentLevelname); //not actually next level in this case but loading a new instance and unloading this instance of the same level
         }
 
         if (gameOver && wonLevel && Input.GetKeyUp(KeyCode.E))
