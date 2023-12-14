@@ -29,6 +29,8 @@ public class GameManager : Singleton<GameManager>
         LoadLevel(levelName);
     }
     public void LoadLevel(string levelName) {
+
+        CurrentLevelname = levelName;
         mainMenu.SetActive(false);
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
 
@@ -37,8 +39,7 @@ public class GameManager : Singleton<GameManager>
             return;
         }
 
-        CurrentLevelname= levelName;
-        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(CurrentLevelname));
+   
         
     }
 

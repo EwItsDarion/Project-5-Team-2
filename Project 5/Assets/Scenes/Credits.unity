@@ -249,7 +249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138.3, y: 79.89999}
+  m_AnchoredPosition: {x: 138.3, y: 87.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &535721785
@@ -272,8 +272,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A game made by: \nArthur Peterson,\nDarion Jefferies , \nJulian Avila,\nand
-    Sarahi Murillo\n\nMuisc by: Sarah Louise Bergman"
+  m_text: "A game made by: \n\nArthur Peterson,\nDarion Jefferies , \nJulian Avila,\nand
+    Sarahi Murillo\n\nMusic by: Sarah Louise Bergman"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
