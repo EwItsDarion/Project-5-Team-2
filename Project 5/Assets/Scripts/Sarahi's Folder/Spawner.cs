@@ -13,6 +13,14 @@ using UnityEngine.UI;
 public class Spawner : MonoBehaviour
 {
 
+    protected IEnumerator DestroyObject(GameObject objToDestroy)
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(objToDestroy);
+    }
+
+    public List<GameObject> spawnedNPCs = new List<GameObject>();
+
     public int numInfected = 0;  //THIS IS FOR OBSERVATION DURING TESTING, CONTROL OF UI, AND WAVE MANAGEMENT, IT IS UPDATED BY THE SCRIPTS
     public int numHealthy = 0;  //THIS IS FOR OBSERVATION DURING TESTING, CONTROL OF UI, AND WAVE MANAGEMENT, IT IS UPDATED BY THE SCRIPTS
 
@@ -65,12 +73,23 @@ public class Spawner : MonoBehaviour
 
     }
 
+    public void DespawnAllNPCs()
+    {
+        foreach (GameObject npc in spawnedNPCs)
+        {
+            DestroyObject(npc);
+            print("Game Objects destroyed!");
+        }
+        spawnedNPCs.Clear();
+    }
+
     private void Spawn(GameObject NPC)
     {
         int spawnerID = Random.Range(0, spawners.Length);
         var spawned = Instantiate(NPC, spawners[spawnerID].transform.position, spawners[spawnerID].transform.rotation);
         SetVariables(spawned);
         //levelManager.numInfected++;
+        spawnedNPCs.Add(spawned);
     }
 
     private void SetVariables(GameObject spawned)
@@ -92,6 +111,7 @@ public class Spawner : MonoBehaviour
          {
              SpawnInfected();
          }*/
+        DespawnAllNPCs();
         waveTemplate = waveT;
         finishedSpawning = false;
         Debug.Log("false");
@@ -129,7 +149,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
 
-        
+
 
         for (int i = 0; i < waveTemplate.sumo; ++i)
         {

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
+
 public class CutsceneController : MonoBehaviour
 {
     public Image[] images; // Array to store your 6 images
@@ -36,9 +37,9 @@ public class CutsceneController : MonoBehaviour
 
         if(isOver)
         {
-            //int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            //SceneManager.LoadScene("Tutorial");
-            GameManager.Instance.NextLevel("Tutorial");
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene("Tutorial");
+            //GameManager.Instance.NextLevel("Tutorial");
         }
         if (numCount == 0 || numCount == 1)
         {
@@ -143,6 +144,16 @@ public class CutsceneController : MonoBehaviour
             }
 
             images[4].gameObject.SetActive(true);
+        }
+
+        if (numCount == 19)
+        {
+            foreach (Image image in images)
+            {
+                image.gameObject.SetActive(false);
+            }
+
+            images[1].gameObject.SetActive(true);
         }
 
         if (numCount == 23)

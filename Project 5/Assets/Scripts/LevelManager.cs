@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     public List<Wave> waveTemplates;    //List of templates for use in the spawner.
 
     public GameObject Player;
+    public Image loseImage;
 
     public Spawner spawner;
 
@@ -50,7 +51,7 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameManager.Instance.CurrentLevelname));
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameManager.Instance.CurrentLevelname));
         //IncrementProgress(0.75f);
         wave = 0;
         isWaveActive = false;
@@ -107,6 +108,7 @@ public class LevelManager : MonoBehaviour
             else
             { //finished with level when all waves are done
                 wonLevel = true;
+                print("The game is finished.");
                 gameOver = true; //we probably need a different name and also behavior for this
             }
 
@@ -129,6 +131,8 @@ public class LevelManager : MonoBehaviour
             wonLevel = false;
         }
 
+
+
         /*        if (!isWaveActive) {  //perhaps we turn off the player controller when we finish a wave??
                     Player.GetComponent < FirstPersonController>().enabled = false;  //this might be dumb
                 }*/
@@ -143,17 +147,25 @@ public class LevelManager : MonoBehaviour
             else
             { //Game Over and Lost
                 scoreText.text = "You Got Infected!" + "\n" + "Press R to try Again!";
+                loseImage.gameObject.SetActive(true);
             }
         }
 
         if (gameOver && !wonLevel && Input.GetKeyUp(KeyCode.R))
         {
-            GameManager.Instance.NextLevel(GameManager.Instance.CurrentLevelname); //not actually next level in this case but loading a new instance and unloading this instance of the same level
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(nextSceneIndex);
+           // GameManager.Instance.NextLevel(GameManager.Instance.CurrentLevelname); //not actually next level in this case but loading a new instance and unloading this instance of the same level
         }
 
         if (gameOver && wonLevel && Input.GetKeyUp(KeyCode.E))
         {
-            GameManager.Instance.NextLevel(nextLevel);
+            //spawner.DespawnAllNPCs();
+            print("Attempting to load the next level");
+
+            spawner.StartWave(waveTemplates[wave]);
+
+
         }
 
         /*        if(slider.value < targetProgress)
