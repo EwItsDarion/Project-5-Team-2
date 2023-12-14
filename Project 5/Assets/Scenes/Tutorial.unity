@@ -44471,8 +44471,8 @@ MonoBehaviour:
   - {fileID: 2034744758}
   infected: {fileID: 805304155707130652, guid: 6e04285578f8c5e41aeaf49a0a36bf6b, type: 3}
   healthy: {fileID: 1457866469621900, guid: 255eca44f584d234b85ab928bf1a924a, type: 3}
-  sumo: {fileID: 0}
-  baby: {fileID: 0}
+  sumo: {fileID: 1281032918164555589, guid: 48e0ba50de1426e4f88e477c36db1c12, type: 3}
+  baby: {fileID: 3666556019471685688, guid: 737dee372615c6c40b3f5fff939ed42d, type: 3}
   centrePoint: {fileID: 1871492286}
   finishedSpawning: 0
 --- !u!4 &2098961259
@@ -46952,7 +46952,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99b24ac0545218246b5444b1a299d612, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.351
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -4,6 +4,7 @@ using Assets.Scripts;
 using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -26,6 +27,8 @@ public class LevelManager : MonoBehaviour
     public GameObject Player;
 
     public Spawner spawner;
+
+    public string nextLevel;
     // Start is called before the first frame update
     //public GameObject waveButton;
 
@@ -42,10 +45,12 @@ public class LevelManager : MonoBehaviour
     private float targetProgress = 0;
     private void Awake()
     {
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameManager.Instance.CurrentLevelname)); simply didn't work
         dialogueQueue = new Queue<string>();
     }
     void Start()
     {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameManager.Instance.CurrentLevelname));
         //IncrementProgress(0.75f);
         wave = 0;
         isWaveActive = false;
@@ -107,8 +112,8 @@ public class LevelManager : MonoBehaviour
 
         }
 
-        if (!isWaveActive && spawner.finishedSpawning)
-        { //If the wave is not active and the spawner isn't spawning, then this is probably after a wave has been completed
+        if (!isWaveActive && spawner.finishedSpawning && !gameOver)
+        { //If the wave is not active and the spawner isn't spawning and the game isn't over, then this is probably after a wave has been completed
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ActivateWave();
@@ -132,7 +137,7 @@ public class LevelManager : MonoBehaviour
         {
             if (wonLevel == true) //Game Over and Won
             {
-                scoreText.text = "You Survived!" + "\n" + "Press R to try Again!";
+                scoreText.text = "You Survived!" + "\n" + "Press E for next Level!";
             }
             else
             { //Game Over and Lost
@@ -140,9 +145,14 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (gameOver && Input.GetKeyUp(KeyCode.R))
+        if (gameOver && !wonLevel && Input.GetKeyUp(KeyCode.R))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(GameManager.Instance.CurrentLevelname);
+        }
+
+        if (gameOver && wonLevel && Input.GetKeyUp(KeyCode.E))
+        {
+            GameManager.Instance.NextLevel(nextLevel);
         }
 
         /*        if(slider.value < targetProgress)
