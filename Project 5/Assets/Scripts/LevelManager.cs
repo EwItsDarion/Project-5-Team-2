@@ -4,6 +4,7 @@ using Assets.Scripts;
 using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -44,10 +45,12 @@ public class LevelManager : MonoBehaviour
     private float targetProgress = 0;
     private void Awake()
     {
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameManager.Instance.CurrentLevelname)); simply didn't work
         dialogueQueue = new Queue<string>();
     }
     void Start()
     {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameManager.Instance.CurrentLevelname));
         //IncrementProgress(0.75f);
         wave = 0;
         isWaveActive = false;

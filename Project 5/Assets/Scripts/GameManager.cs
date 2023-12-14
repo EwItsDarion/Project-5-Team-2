@@ -38,6 +38,7 @@ public class GameManager : Singleton<GameManager>
         }
 
         CurrentLevelname= levelName;
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(CurrentLevelname));
         
     }
 
