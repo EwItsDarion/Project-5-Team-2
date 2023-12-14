@@ -16,6 +16,11 @@ public class ChildInfected : Infected
         timeToCoughHigh = 3;
     }
 
+    protected void Start()
+    {
+        base.Start();
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -16,6 +16,11 @@ public class SumoInfected : Infected
         timeToCoughHigh = 10;
     }
 
+    protected void Start()
+    {
+        base.Start();
+    }
+
     // Update is called once per frame
     void Update()
     {

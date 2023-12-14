@@ -39,7 +39,7 @@ namespace Assets.Scripts
 
         public override void headHit(Projectile projectile)
         {
-            audioSource.PlayOneShot(hitSound);
+            //audioSource.PlayOneShot(hitSound);
             if (!masked) {
                 
                 masked = true;

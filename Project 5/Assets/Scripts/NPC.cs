@@ -17,7 +17,7 @@ public abstract class NPC : LivingThing
     public Spawner spawner;
 
     protected AudioSource audioSource;
-    public AudioClip hitSound;
+    //public AudioClip hitSound;
 
     protected override void Awake()
     {

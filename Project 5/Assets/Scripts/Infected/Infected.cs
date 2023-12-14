@@ -50,7 +50,7 @@ namespace Assets.Scripts
         }
 
         // Use this for initialization
-        void Start()
+        protected void Start()
         {
             spawner.numInfected++;
             StartCoroutine(CoughWithCoroutine());
@@ -91,8 +91,7 @@ namespace Assets.Scripts
 
         public override void headHit(Projectile projectile)
         {
-            Debug.Log("l;kjashndgl;jahsdg");
-            audioSource.PlayOneShot(hitSound, 2.0f);
+           //audioSource.PlayOneShot(hitSound, 2.0f);
             TakeDamage(projectile.damage);
         }
     }
