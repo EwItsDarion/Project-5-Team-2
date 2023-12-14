@@ -31,12 +31,12 @@ public class InventorySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Tutorial"|| SceneManager.GetActiveScene().name == "Level 3")
+        if (SceneManager.GetActiveScene().name == "Tutorial"|| SceneManager.GetActiveScene().name == "Level3")
         {
             weapons[1].unlocked = true;
             weapons[2].unlocked = true;
         }
-        else if(SceneManager.GetActiveScene().name == "Level 2")
+        else if(SceneManager.GetActiveScene().name == "Level2")
             weapons[1].unlocked = true;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
