@@ -114,6 +114,7 @@ public class LevelManager : MonoBehaviour
 
         if (!isWaveActive && spawner.finishedSpawning && !gameOver)
         { //If the wave is not active and the spawner isn't spawning and the game isn't over, then this is probably after a wave has been completed
+            scoreText.text = "Wave Complete!" + "\n" + "Press E for next wave!";
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ActivateWave();
@@ -170,6 +171,7 @@ public class LevelManager : MonoBehaviour
 
     public void ActivateWave()
     {
+        scoreText.text = "";
         dialogueQueue.Enqueue(dialogueCharacter + ": Starting wave " + wave);
         dialogueText.text = dialogueQueue.Dequeue();
         isDialogueActive = true;
