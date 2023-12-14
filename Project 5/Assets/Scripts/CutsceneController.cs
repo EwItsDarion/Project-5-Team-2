@@ -37,7 +37,7 @@ public class CutsceneController : MonoBehaviour
         if(isOver)
         {
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            SceneManager.LoadScene(nextSceneIndex);
+            SceneManager.LoadScene("Tutorial");
         }
         if (numCount == 0 || numCount == 1)
         {
