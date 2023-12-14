@@ -10,8 +10,8 @@ public class SumoInfected : Infected
     {
         base.Awake();
         health = 250;
-        speed = 2.0f;
-        damage = 150;
+        speed = .50f;
+        damage = 70;
         timeToCoughLow = 5;
         timeToCoughHigh = 10;
     }

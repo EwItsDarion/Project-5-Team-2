@@ -9,7 +9,7 @@ public class ChildInfected : Infected
     protected override void Awake()
     {
         base.Awake();
-        speed = 5.0f;
+        speed = 7.0f;
         health = 25;
         damage = 50;
         timeToCoughLow = 1;

@@ -1449,6 +1449,14 @@ PrefabInstance:
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: winImage
+      value: 
+      objectReference: {fileID: 1910534606}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: loseImage
+      value: 
+      objectReference: {fileID: 1797624402}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: nextLevel
       value: Level3
       objectReference: {fileID: 0}
@@ -1466,7 +1474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].baby
@@ -1478,31 +1486,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].baby
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].sumo
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[2].baby
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[2].sumo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].healthy
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].healthy
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[2].healthy
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].infected
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].infected
-      value: 10
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: waveTemplates.Array.data[2].infected
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4677165996224855942, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: m_Name
       value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677165996224855942, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5235,6 +5263,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4991815247904255431, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5304602258031205647, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6289768270228506154, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -7230,7 +7266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &596244942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22857,6 +22893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e25c1a203fa26541859634ba669539c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnedNPCs: []
   numInfected: 0
   numHealthy: 0
   spawners:
@@ -23278,6 +23315,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300570, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
+--- !u!1 &1797624402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2923760184969865667, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+  m_PrefabInstance: {fileID: 425769362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1797655602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100516, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
@@ -24497,6 +24539,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0680008, y: 3.503, z: 1.1879997}
   m_Center: {x: -37.972, y: 2.0435, z: -15.287}
+--- !u!1 &1910534606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7135917610017723484, guid: 3c6020cadd02bb64f8afa0ebf5007009, type: 3}
+  m_PrefabInstance: {fileID: 425769362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1911711697 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101238, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}

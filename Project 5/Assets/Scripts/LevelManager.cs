@@ -21,11 +21,13 @@ public class LevelManager : MonoBehaviour
     public bool gameOver;
     public bool wonLevel; //used for level end control
     public bool waveInitialized; // Control variable for UI
+    public GameObject winImage;
+    public GameObject loseImage;
 
     public List<Wave> waveTemplates;    //List of templates for use in the spawner.
 
     public GameObject Player;
-    public Image loseImage;
+    //public Image loseImage;
 
     public Spawner spawner;
 
@@ -39,6 +41,7 @@ public class LevelManager : MonoBehaviour
     public List<string> currentDialogue;
     public bool isDialogueActive;
     public Queue<string> dialogueQueue;
+    public int numCount = 0;
 
     public Slider slider;
     public float FillSpeed = .05f;
@@ -100,7 +103,22 @@ public class LevelManager : MonoBehaviour
         if (isWaveActive && spawner.numInfected == 0) //if the wave is active and the spawner isn't listing any infected then the wave is completed
         {//Boolean logic between this conditional and the one after it feels mega cringe but should work
             isWaveActive = false;
+            numCount++;
             wave++;
+            if (numCount == 3)
+            {
+                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                if (currentSceneIndex != 6)
+                {
+                    int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                    SceneManager.LoadScene(nextSceneIndex);
+                }
+                else
+                {
+                    winImage.SetActive(true);
+                }
+            }
+
             if (wave < waveTemplates.Count)
             { //Are all waves done? if no
                 dialogueText.enabled = true;
@@ -147,7 +165,7 @@ public class LevelManager : MonoBehaviour
             else
             { //Game Over and Lost
                 scoreText.text = "You Got Infected!" + "\n" + "Press R to try Again!";
-                loseImage.gameObject.SetActive(true);
+                loseImage.SetActive(true);
             }
         }
 
