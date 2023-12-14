@@ -129,9 +129,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
 
-        finishedSpawning = true;
-        Debug.Log("true");
-        //levelManager.initialized = true;
+        
 
         for (int i = 0; i < waveTemplate.sumo; ++i)
         {
@@ -144,6 +142,9 @@ public class Spawner : MonoBehaviour
             Spawn(baby);
             yield return new WaitForSeconds(0.2f);
         }
+        finishedSpawning = true;
+        Debug.Log("true");
+        //levelManager.initialized = true;
     }
 
 }
