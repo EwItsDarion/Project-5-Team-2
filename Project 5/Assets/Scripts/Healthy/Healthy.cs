@@ -20,6 +20,13 @@ namespace Assets.Scripts
             GameObject swap = Instantiate(infectedPrefab, gameObject.transform.position, gameObject.transform.rotation);
             //swap.GetComponent<NPC>().centrePoint = centrePoint;
             SetVariables(swap);
+
+            int index = spawner.spawnedNPCs.IndexOf(gameObject);
+            if (index != -1)
+            {
+                spawner.spawnedNPCs[index] = swap;
+            }
+
             spawner.numHealthy--;
             /*levelManager.numInfected++;*/
             Destroy(gameObject);

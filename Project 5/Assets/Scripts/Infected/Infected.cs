@@ -38,7 +38,16 @@ namespace Assets.Scripts
                 GameObject swap = Instantiate(healthyPrefab, gameObject.transform.position, gameObject.transform.rotation);
                 //swap.GetComponent<NPC>().centrePoint = centrePoint; //Defines centerpoint of NPC movement radius programmatically on swap
                 SetVariables(swap);
+
+                int index = spawner.spawnedNPCs.IndexOf(gameObject);
+                if (index != -1)
+                {
+                    spawner.spawnedNPCs[index] = swap;
+                }
+
                 spawner.numInfected--;
+
+
                 /*levelManager.numHealthy++;*/
                 //levelManager.CheckWin();
                 Destroy(gameObject);

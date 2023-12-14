@@ -996,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 1760255511}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: totalNPC
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: nextLevel
@@ -1023,12 +1023,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1846396388}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
+      propertyPath: dialogueCharacter
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: currentDialogue.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: 'currentDialogue.Array.data[0]'
@@ -1052,7 +1056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].sumo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: 'EndWaveDialogueList.Array.data[0]'
@@ -1060,19 +1064,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].healthy
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].healthy
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[0].infected
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3895667736066244833, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: waveTemplates.Array.data[1].infected
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4677165996224855942, guid: 98f4767f256e1d4489f595e4a4c041a0, type: 3}
       propertyPath: m_Name
@@ -14655,6 +14659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e25c1a203fa26541859634ba669539c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnedNPCs:
+  - {fileID: 0}
   numInfected: 0
   numHealthy: 0
   spawners:

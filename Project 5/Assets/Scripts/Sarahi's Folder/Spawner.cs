@@ -75,10 +75,11 @@ public class Spawner : MonoBehaviour
 
     public void DespawnAllNPCs()
     {
-        foreach (GameObject npc in spawnedNPCs)
+        List<GameObject> spawnedNPCsCopy = new List<GameObject>(spawnedNPCs);
+
+        foreach (GameObject npc in spawnedNPCsCopy)
         {
-            DestroyObject(npc);
-            print("Game Objects destroyed!");
+            StartCoroutine(DestroyObject(npc));
         }
         spawnedNPCs.Clear();
     }
