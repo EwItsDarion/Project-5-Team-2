@@ -20,11 +20,11 @@ public class InventorySystem : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Tutorial")
             unlockedWeapons = 3;
-        else if (SceneManager.GetActiveScene().name == "Level 1")
+        else if (SceneManager.GetActiveScene().name == "Level1")
             unlockedWeapons = 1;
-        else if (SceneManager.GetActiveScene().name == "Level 2")
+        else if (SceneManager.GetActiveScene().name == "Level2")
             unlockedWeapons = 2;
-        else if (SceneManager.GetActiveScene().name == "Level 3")
+        else if (SceneManager.GetActiveScene().name == "Level3")
             unlockedWeapons = 3;
     }
 

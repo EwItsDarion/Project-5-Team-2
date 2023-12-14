@@ -98,7 +98,7 @@ public class TutorialManager : MonoBehaviour
 
     void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameManager.Instance.NextLevel("Level1");
     }
 
 }

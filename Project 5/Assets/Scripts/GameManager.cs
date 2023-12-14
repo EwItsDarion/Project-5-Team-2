@@ -14,15 +14,22 @@ public class GameManager : Singleton<GameManager>
 {
     
     public int score = 0;
+    public GameObject mainMenu;
 
     //public GameObject pauseMenu;
 
     //level tracking variable
-    private string CurrentLevelname = string.Empty;
+    public string CurrentLevelname = string.Empty;
 
     //methods to load and unload scenes
 
+
+    public void NextLevel(string levelName) {
+        UnloadCurrentLevel();
+        LoadLevel(levelName);
+    }
     public void LoadLevel(string levelName) {
+        mainMenu.SetActive(false);
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
 
         if (ao == null) {
