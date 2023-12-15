@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour
     public float FillSpeed = .05f;
 
     private float targetProgress = 0;
+    int nextSceneIndex;
     private void Awake()
     {
         //SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameManager.Instance.CurrentLevelname)); simply didn't work
@@ -105,17 +106,19 @@ public class LevelManager : MonoBehaviour
             isWaveActive = false;
             numCount++;
             wave++;
+           
             if (numCount == 3)
             {
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
                 if (currentSceneIndex != 6)
                 {
-                    int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                    nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
                     SceneManager.LoadScene(nextSceneIndex);
                 }
                 else
                 {
                     winImage.SetActive(true);
+                    StartCoroutine("FinishGame");
                 }
             }
 
@@ -217,6 +220,14 @@ public class LevelManager : MonoBehaviour
             isWaveActive = false;
             gameOver = true;
         }
+    }
+
+
+    public IEnumerator FinishGame()
+    {
+        yield return new WaitForSeconds(10f);
+        nextSceneIndex = 0;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     /*    public void IncrementProgress(float newProgress)

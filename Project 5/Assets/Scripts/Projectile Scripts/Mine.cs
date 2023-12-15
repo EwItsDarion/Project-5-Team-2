@@ -48,8 +48,8 @@ public class Mine : Projectile
     {
         if (exploded == false)
         {
-            explosionCollider.enabled = true;
             explosionParicle.GetComponent<ParticleSystem>().Play();
+            explosionCollider.enabled = true;
             meshRender1.enabled = meshRender2.enabled = false;
             //GetComponent<Collider>().enabled = false;
             exploded = true;
