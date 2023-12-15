@@ -12,8 +12,9 @@ public class Mine : Projectile
     void Start()
     {
         damage = 100;
-        velocity = 10.0f;
+        velocity = 15.0f;
         rb = gameObject.GetComponent<Rigidbody>();
+    
         SetVelocity(velocity);
         StartCoroutine(DestroyObject());
         exploded = false;
@@ -24,7 +25,7 @@ public class Mine : Projectile
     // Update is called once per frame
     void Update()
     {
-
+      
     }
 
     protected IEnumerator DestroyObject()

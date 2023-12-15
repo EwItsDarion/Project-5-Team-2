@@ -23,7 +23,7 @@ public class MaskCannon : Weapon
     void Start()
     {
         canShoot = true;
-        StartCoroutine(AllowPlayerToShoot());
+        StartCoroutine(AllowPlayerToShoot(2f));
        shotAnimation = GetComponent<Animator>();
     }
 
@@ -50,5 +50,8 @@ public class MaskCannon : Weapon
       
     }
 
-  
+    protected void OnEnable()
+    {
+        StartCoroutine(AllowPlayerToShoot(2f));
+    }
 }

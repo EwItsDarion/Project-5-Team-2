@@ -19,28 +19,35 @@ public class InventorySystem : MonoBehaviour
         EquipItem(weaponNum);
 
 
-    
+        if (SceneManager.GetActiveScene().name == "Tutorial" || SceneManager.GetActiveScene().name == "Level3"|| SceneManager.GetActiveScene().name=="JulianTesting")
+        {
             unlockedWeapons = 3;
+
+        }
+        else if (SceneManager.GetActiveScene().name == "Level2")
+            unlockedWeapons = 2;
+        else
+            unlockedWeapons = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        weapons[1].unlocked = true;
-        weapons[2].unlocked = true;
+       
+        if (SceneManager.GetActiveScene().name == "Tutorial"|| SceneManager.GetActiveScene().name == "Level3"|| SceneManager.GetActiveScene().name == "JulianTesting")
+        {
+            weapons[1].unlocked = true;
+            weapons[2].unlocked = true;
 
-        //if (SceneManager.GetActiveScene().name == "Tutorial"|| SceneManager.GetActiveScene().name == "Level3")
-        //{
-           
-        //}
-        //else if(SceneManager.GetActiveScene().name == "Level2")
-        //    weapons[1].unlocked = true;
+        }
+        else if(SceneManager.GetActiveScene().name == "Level2")
+            weapons[1].unlocked = true;
 
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    weapons[weapons.Length - 1].gameObject.SetActive(false);
-        //    weaponNum = 0;
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            weapons[weapons.Length - 1].gameObject.SetActive(false);
+            weaponNum = 0;
+        }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -108,6 +115,7 @@ public class InventorySystem : MonoBehaviour
         weapons[weaponNum].gameObject.SetActive(true);
         
     }
+
 
     private void OnEnable()
     {

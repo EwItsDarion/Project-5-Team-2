@@ -19,7 +19,7 @@ public class MineWeapon : Weapon
     {
         canShoot = true;
         
-        StartCoroutine(AllowPlayerToShoot());
+        StartCoroutine(AllowPlayerToShoot(1f));
       
      
     }
@@ -42,7 +42,10 @@ public class MineWeapon : Weapon
        
 
     }
+    protected void OnEnable()
+    {
+        StartCoroutine(AllowPlayerToShoot(1f));
+    }
 
-  
 }
 

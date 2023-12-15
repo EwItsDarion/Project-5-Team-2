@@ -2360,6 +2360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 0
   unlocked: 0
+  manager: {fileID: 1000843388}
   mine: {fileID: 6499539853470112116, guid: 4a30b3a3c6301bb4697956f044a340db, type: 3}
   tempMine: {fileID: 0}
   projectileSpawnPosition: {fileID: 1560150421}
@@ -23221,6 +23222,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9100903310231206947, guid: 68dcc6130e195814187b3fab40ea8778, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1000843388}
+    - target: {fileID: 9100903310231206947, guid: 68dcc6130e195814187b3fab40ea8778, type: 3}
       propertyPath: MoveSpeed
       value: 10
       objectReference: {fileID: 0}
@@ -38751,6 +38756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 0
   unlocked: 0
+  manager: {fileID: 1000843388}
   mask: {fileID: 4784159292163884620, guid: 65a4597e740ebe341961be44f797339f, type: 3}
   tempMask: {fileID: 0}
   projectileSpawnPosition1: {fileID: 1200500692}
@@ -42124,6 +42130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 0
   unlocked: 0
+  manager: {fileID: 1000843388}
   mask: {fileID: 4784159292163884620, guid: 65a4597e740ebe341961be44f797339f, type: 3}
   tempMask: {fileID: 0}
   projectileSpawnPosition1: {fileID: 459764223}
@@ -44252,6 +44259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e25c1a203fa26541859634ba669539c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnedNPCs: []
   numInfected: 1
   numHealthy: 2
   spawners:
@@ -45579,6 +45587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 0
   unlocked: 0
+  manager: {fileID: 1000843388}
   mask: {fileID: 4784159292163884620, guid: 65a4597e740ebe341961be44f797339f, type: 3}
   tempMask: {fileID: 0}
   projectileSpawnPosition1: {fileID: 8202842644856899454}
@@ -46043,6 +46052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 0
   unlocked: 0
+  manager: {fileID: 1000843388}
   mine: {fileID: 6499539853470112116, guid: 4a30b3a3c6301bb4697956f044a340db, type: 3}
   tempMine: {fileID: 0}
   projectileSpawnPosition: {fileID: 8400198577708734293}
@@ -47007,6 +47017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 0
   unlocked: 0
+  manager: {fileID: 1000843388}
   mask: {fileID: 4784159292163884620, guid: 65a4597e740ebe341961be44f797339f, type: 3}
   tempMask: {fileID: 0}
   projectileSpawnPosition1: {fileID: 7150097915829533862}

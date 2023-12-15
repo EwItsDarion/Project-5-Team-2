@@ -8141,6 +8141,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9100903310231206947, guid: 68dcc6130e195814187b3fab40ea8778, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 2035020337}
+    - target: {fileID: 9100903310231206947, guid: 68dcc6130e195814187b3fab40ea8778, type: 3}
       propertyPath: MoveSpeed
       value: 10
       objectReference: {fileID: 0}
@@ -19168,6 +19172,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1884487483598341990, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 2035020337}
+    - target: {fileID: 5137192615932439648, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 2035020337}
     - target: {fileID: 8090759625835521496, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -96.6
@@ -19208,6 +19220,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9042367465623738816, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 2035020337}
     - target: {fileID: 9042367465623738816, guid: 5523dbb104d16c541be38d97febce20b, type: 3}
       propertyPath: maskVisual
       value: 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public  bool canShoot, unlocked;
+    public LevelManager manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,23 +18,21 @@ public class Weapon : MonoBehaviour
         
     }
 
-    protected IEnumerator AllowPlayerToShoot()
+    //Coroutine that allows the player to shoot after some time (timeForReload)
+    protected IEnumerator AllowPlayerToShoot(float timeForReload)
     {
         //change while to till game over maybe?
-        while (true)
+        while (!manager.gameOver)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(timeForReload);
             if (canShoot == false)
             {
                 canShoot = true;
             }
         }
     }
-    protected void OnEnable()
-    {
-        StartCoroutine(AllowPlayerToShoot());
-    }
 
+    //Checks to see if the weapon is unlocked
     public bool IsUnlocked() { return unlocked; }
 
 }

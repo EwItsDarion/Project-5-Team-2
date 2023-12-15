@@ -180,7 +180,11 @@ public class CutsceneController : MonoBehaviour
         {
             numCount++;
             NextSentence();
+            
         }
+
+       
+        
     }
 
     public void NextSentence()

@@ -73,8 +73,9 @@ namespace StarterAssets
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
+        public LevelManager manager;
 
-		private bool IsCurrentDeviceMouse
+        private bool IsCurrentDeviceMouse
 		{
 			get
 			{
@@ -112,9 +113,12 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			JumpAndGravity();
-			GroundedCheck();
-			Move();
+            if (manager.gameOver == false)
+            {
+                JumpAndGravity();
+                GroundedCheck();
+                Move();
+            }
 		}
 
 		private void LateUpdate()

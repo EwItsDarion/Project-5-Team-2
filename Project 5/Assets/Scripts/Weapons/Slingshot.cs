@@ -20,7 +20,7 @@ public class Slingshot : Weapon
     void Start()
     {
         canShoot = true;
-        StartCoroutine(AllowPlayerToShoot());
+        StartCoroutine(AllowPlayerToShoot(1f));
         stringSize = stringforSling.transform.localScale;
        
     }
@@ -35,9 +35,9 @@ public class Slingshot : Weapon
         if (Input.GetMouseButton(0) && canShoot == true)
         {
             if(stringforSling.transform.localScale.z<stringSize.z+20)
-            stringforSling.transform.localScale += new Vector3(0,0,5);
+            stringforSling.transform.localScale += new Vector3(0,0,10);
 
-            velocity += 20;
+            velocity += 40;
             canShoot = false;
            
 
@@ -51,6 +51,12 @@ public class Slingshot : Weapon
             velocity = 0;
         }
 
+    }
+
+
+    protected void OnEnable()
+    {
+        StartCoroutine(AllowPlayerToShoot(1f));
     }
 }
 
